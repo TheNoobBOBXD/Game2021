@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://crosshair.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.75
+height = 1.25
+
+[sub_resource type="CapsuleMesh" id=2]
+radius = 0.75
+mid_height = 1.25
+
+[sub_resource type="CubeMesh" id=3]
+size = Vector3( 1.945, 1.601, 1.612 )
+
+[node name="Player" type="KinematicBody"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Head" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.899069, 0 )
+
+[node name="Camera" type="Camera" parent="Head"]
+
+[node name="AimCast" type="RayCast" parent="Head/Camera"]
+enabled = true
+cast_to = Vector3( 0, 0, -100 )
+
+[node name="Gun" type="MeshInstance" parent="Head/Camera"]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.580604, 0.421545, -0.280699, -0.380368 )
+mesh = SubResource( 3 )
+material/0 = null
+
+[node name="Muzzle" type="Spatial" parent="Head/Camera/Gun"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.938229 )
+
+[node name="TextureRect" type="TextureRect" parent="Head/Camera"]
+margin_left = 940.0
+margin_top = 520.0
+margin_right = 980.0
+margin_bottom = 560.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
