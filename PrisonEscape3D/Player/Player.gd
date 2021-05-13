@@ -15,7 +15,7 @@ export var reload_rate = 1
 onready var head = $Head
 onready var camera = $Head/Camera
 onready var aimcast = $Head/Camera/AimCast
-onready var muzzle = $Head/Gun/Muzzle
+onready var muzzle = $Head/Camera/Gun/Muzzle
 
 
 var damage = 100
@@ -48,21 +48,25 @@ func _process(_delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if Input.is_action_just_pressed("fire"):
+		
 		if aimcast.is_colliding():
 			var collision = aimcast.get_collider()
 			#NEW CODE
 			if collision:
-				if current_ammo >0 and not reloading:
-					can_fire =false
-					current_ammo -=1	
+				if current_ammo >0 and not reloading and collision.is_in_group("Enemy"):
+					collision.health -=  damage 
+					can_fire = false
+					current_ammo -=1
 					yield(get_tree().create_timer(fire_rate), "timeout")
 					can_fire = true 
+					
+					
 				#OLD CODE
-					if collision.is_in_group("Enemy"):
-						print("hit enemy")
-						collision.health -= damage
+					#if collision.is_in_group("Enemy"):
+					#	print("hit enemy")
+					#	collision.health -= damage
 				#NEW CODE
-				elif not reloading:
+				elif not reloading and clip_size == 0:
 					print("reloading")
 					reloading=true 
 					yield(get_tree().create_timer(reload_rate), "timeout")

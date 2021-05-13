@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/SubmachineGun_01.obj-69ad61388c0a8cc11413ae683cce149f.mesh"
+
+[deps]
+
+files=[ "res://.import/SubmachineGun_01.obj-69ad61388c0a8cc11413ae683cce149f.mesh" ]
+
+source_file="res://Weapons/WeaponsPack_V.1/OBJ/SubmachineGun_01.obj"
+dest_files=[ "res://.import/SubmachineGun_01.obj-69ad61388c0a8cc11413ae683cce149f.mesh", "res://.import/SubmachineGun_01.obj-69ad61388c0a8cc11413ae683cce149f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
