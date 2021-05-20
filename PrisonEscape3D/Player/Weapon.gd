@@ -14,7 +14,9 @@ var reloading = false
 
 func _ready():
 	current_ammo = clip_size
-
+	if reloading:
+		ammo_label.set_text("Reloading...")
+		
 func _process(delta):
 	ammo_label.set_text("%d / %d" % [current_ammo, clip_size])
 	if Input.is_action_just_pressed("primary_fire") and can_fire:
