@@ -1,6 +1,6 @@
 extends Weapon
 
-export  var fire_range = 10
+export var fire_range = 12
 
 
 func _ready():

@@ -45,6 +45,9 @@ enabled = true
 cast_to = Vector3( 0, 0, -100 )
 
 [node name="InteractionRayCast" type="RayCast" parent="Head/Camera"]
+enabled = true
+cast_to = Vector3( 0, 0, -5 )
+collision_mask = 2
 script = ExtResource( 4 )
 
 [node name="Weapon" type="Node" parent="."]
