@@ -59,7 +59,6 @@ material/0 = SubResource( 3 )
 [node name="StaticBody" type="StaticBody" parent="Jumpplat4"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Jumpplat4/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Wall" type="MeshInstance" parent="."]
@@ -70,7 +69,6 @@ material/0 = SubResource( 3 )
 [node name="StaticBody" type="StaticBody" parent="Wall"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Wall/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="Jumpplat2" type="MeshInstance" parent="."]
@@ -137,9 +135,10 @@ shape = SubResource( 6 )
 [node name="Enemy2" type="StaticBody" parent="." groups=[
 "Enemies",
 ]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.49035, 0, -4.9527 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.335, 0, -14.7454 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Enemy2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 mesh = SubResource( 5 )
 material/0 = null
 

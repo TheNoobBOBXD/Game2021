@@ -1,8 +1,12 @@
 extends KinematicBody
 
+export var gravity = 0.98 #mycode
+
 export var speed = 100
 var space_state
 var target
+
+var velocity = Vector3()#mycode
 
 func _ready():
 	space_state = get_world().direct_space_state
@@ -16,6 +20,14 @@ func _process(delta):
 			move_to_target(delta)
 		else:
 			set_color_green()
+			
+func _physics_process(delta):#mycode
+	
+	velocity.y -= gravity#mycode
+	velocity = move_and_slide(velocity, Vector3.UP)#mycode
+#	if is_colliding() and collider.is_on_floor:
+#		velocity.y += jump_power
+
 
 func _on_Area_body_entered(body):
 	if body.is_in_group("Player"):
