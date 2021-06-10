@@ -2,10 +2,10 @@ extends KinematicBody
 
 export var gravity = 0.98 #mycode
 
-export var speed = 100
+export var speed = 500
 var space_state
 var target
-
+var camera_x_rotation = 0 #my
 var velocity = Vector3()#mycode
 
 func _ready():
@@ -25,8 +25,6 @@ func _physics_process(delta):#mycode
 	
 	velocity.y -= gravity#mycode
 	velocity = move_and_slide(velocity, Vector3.UP)#mycode
-#	if is_colliding() and collider.is_on_floor:
-#		velocity.y += jump_power
 
 
 func _on_Area_body_entered(body):
