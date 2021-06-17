@@ -7,6 +7,7 @@ export var jump_power = 30
 export var mouse_sensitivity = 0.2
 
 
+
 onready var head = $Head
 onready var camera = $Head/Camera
 
@@ -30,6 +31,8 @@ func _process(delta):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _physics_process(delta):
+	
+	
 	var head_basis = head.get_global_transform().basis
 	
 	var direction = Vector3()
@@ -52,3 +55,24 @@ func _physics_process(delta):
 		velocity.y += jump_power
 	
 	velocity = move_and_slide(velocity, Vector3.UP)
+	if Input.is_action_just_pressed("crouch"):
+		crouch(delta)
+	if Input.is_action_just_released("crouch"):
+		uncrouch(delta)
+
+
+func crouch(delta):
+	print("crouch")
+	$CollisionShape.shape.height = 0.5
+
+	
+
+
+
+func uncrouch(delta):
+	print("uncrouch")
+	$CollisionShape.shape.height = 1.25
+
+
+
+
