@@ -1,7 +1,7 @@
 extends KinematicBody
 
 export var gravity = 0.98 #mycode
-
+var follow_player = false
 export var speed = 500
 var space_state
 var target
@@ -23,19 +23,24 @@ func _process(delta):
 			set_color_green()
 			
 func _physics_process(delta):#mycode
+	if $RayCast.get_collider() != null:
+		if $RayCast.get_collider().name == "Player":
+			velocity.y -= gravity#mycode
+			velocity = move_and_slide(velocity, Vector3.UP)#mycode
+
 	
-	velocity.y -= gravity#mycode
-	velocity = move_and_slide(velocity, Vector3.UP)#mycode
-
-
 func _on_Area_body_entered(body):
 	if body.is_in_group("Player"):
+		$RayCast.set_enabled(true)
+		follow_player = true
 		target = body
 		print(body.name + " entered")
 		set_color_red()
 
 func _on_Area_body_exited(body):
 	if body.is_in_group("Player"):
+		$RayCast.set_enabled(false)
+		follow_player = false
 		target = null
 		print(body.name + " exited")
 		set_color_green()

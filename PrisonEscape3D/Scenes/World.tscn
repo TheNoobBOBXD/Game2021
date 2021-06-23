@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://default_env.tres" type="Environment" id=2]
 [ext_resource path="res://Interactable/InteractableLightSwitch.gd" type="Script" id=3]
 [ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GodotWallandFloor/Walltexture1.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -398,3 +399,9 @@ environment = ExtResource( 2 )
 [node name="DirectionalLight" type="DirectionalLight" parent="WorldEnvironment"]
 transform = Transform( 1, 0, 0, 0, -0.866025, 0.5, 0, -0.5, -0.866025, -0.0294418, 3.05927, -117.709 )
 light_energy = 0.42
+
+[node name="Walltexture1" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83011, -1.41506, -3.04237 )
+
+[node name="Walltexture2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83011, -1.41506, -5.02345 )

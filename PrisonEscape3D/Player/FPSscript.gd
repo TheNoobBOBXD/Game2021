@@ -1,5 +1,8 @@
 extends KinematicBody
 
+#var speed
+#export var sprint_speed = 20
+#export var default_speed = 10
 export var speed = 10
 export var acceleration = 5
 export var gravity = 0.98
@@ -32,6 +35,7 @@ func _process(delta):
 
 func _physics_process(delta):
 	
+	#speed = default_speed
 	
 	var head_basis = head.get_global_transform().basis
 	
@@ -55,6 +59,9 @@ func _physics_process(delta):
 		velocity.y += jump_power
 	
 	velocity = move_and_slide(velocity, Vector3.UP)
+	
+
+	
 	if Input.is_action_just_pressed("crouch"):
 		crouch(delta)
 	if Input.is_action_just_released("crouch"):
