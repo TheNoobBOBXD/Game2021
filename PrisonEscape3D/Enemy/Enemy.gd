@@ -7,6 +7,7 @@ var space_state
 var target
 var camera_x_rotation = 0 #my
 var velocity = Vector3()#mycode
+var health = 100
 onready var blood = preload("res://Particles/Blood.tscn")
 
 func _ready():

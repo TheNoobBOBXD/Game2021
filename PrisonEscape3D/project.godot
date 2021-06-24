@@ -30,12 +30,16 @@ config/name="PrisonEscape3D"
 run/main_scene="res://Scenes/World.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+WeaponList="*res://WeaponList.gd"
+
 [display]
 
-window/size/width=1920
-window/size/height=1080
-window/size/test_width=1920
-window/size/test_height=1080
+window/size/width=1200
+window/size/height=700
+window/size/test_width=1200
+window/size/test_height=700
 
 [input]
 

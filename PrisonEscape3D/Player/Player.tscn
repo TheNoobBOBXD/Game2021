@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Player/FPSscript.gd" type="Script" id=1]
 [ext_resource path="res://crosshair.png" type="Texture" id=2]
-[ext_resource path="res://Player/Shotgun.gd" type="Script" id=3]
+[ext_resource path="res://MyWeapons/Shotgun.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Player/Interaction.gd" type="Script" id=4]
 
 [sub_resource type="CapsuleShape" id=1]
@@ -52,7 +52,5 @@ cast_to = Vector3( 0, 0, -5 )
 collision_mask = 2
 script = ExtResource( 4 )
 
-[node name="Weapon" type="Node" parent="."]
-script = ExtResource( 3 )
-fire_rate = 1.0
-clip_size = 2
+[node name="Shotgun" parent="Head/Camera" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.899069, 0 )

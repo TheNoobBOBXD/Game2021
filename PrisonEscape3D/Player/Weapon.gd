@@ -11,11 +11,12 @@ onready var raycast = $"../Head/Camera/RayCast"
 var current_ammo = 0
 var can_fire = true
 var reloading = false
+var weapon_damage = 10
 
 func _ready():
 	current_ammo = clip_size
 
-		
+
 func _process(delta):
 	if reloading:
 		ammo_label.set_text("Reloading...")
@@ -36,7 +37,9 @@ func check_collision():
 	if raycast.is_colliding():
 		var collider = raycast.get_collider()
 		if collider.is_in_group("Enemies"):
-			collider.queue_free()
+			collider.health -=50
+			if collider.health <=0:
+				collider.queue_free()
 			print("Killed" + collider.name)
 
 func fire():
