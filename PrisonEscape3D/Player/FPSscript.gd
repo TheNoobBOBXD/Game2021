@@ -72,10 +72,6 @@ func crouch(delta):
 	print("crouch")
 	$CollisionShape.shape.height = 0.5
 
-	
-
-
-
 func uncrouch(delta):
 	print("uncrouch")
 	$CollisionShape.shape.height = 1.25

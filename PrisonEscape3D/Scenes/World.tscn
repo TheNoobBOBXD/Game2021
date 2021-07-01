@@ -17,7 +17,7 @@ albedo_color = Color( 0, 0, 0, 1 )
 [sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 1, 0, 0, 1 )
 
-[sub_resource type="CapsuleMesh" id=7]
+[sub_resource type="CapsuleMesh" id=5]
 
 [node name="World" type="Spatial"]
 transform = Transform( 1.41337, 0, 0, 0, 1.41337, 0, 0, 0, 1.41337, 0, 0, 0 )
@@ -26,7 +26,7 @@ transform = Transform( 1.41337, 0, 0, 0, 1.41337, 0, 0, 0, 1.41337, 0, 0, 0 )
 transform = Transform( -0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -10.8959, -0.250168, -10.1177 )
 
 [node name="Enemy5" parent="." instance=ExtResource( 4 )]
-transform = Transform( -0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 9.406, -0.250168, -8.70264 )
+transform = Transform( 0.258819, 0, 0.965925, 0, 1, 0, -0.965925, 0, 0.258819, 9.406, -0.250168, -8.70264 )
 
 [node name="Enemy6" parent="." instance=ExtResource( 4 )]
 transform = Transform( -0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -8.98974, -0.250168, -20.9321 )
@@ -38,6 +38,7 @@ transform = Transform( -0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819,
 transform = Transform( -0.999999, 0, 8.4344e-08, 0, 1, 0, -8.4344e-08, 0, -0.999999, -24.5554, -0.250168, -18.8095 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.24517, -8.4344e-08, 21.2259 )
 jump_power = 25
 
 [node name="Groundbase" type="MeshInstance" parent="."]
@@ -334,7 +335,7 @@ __meta__ = {
 
 [node name="Lightbulb" type="MeshInstance" parent="."]
 transform = Transform( 0.230184, 0, 0, 0, 0.533967, 0, 0, 0, 0.0946297, 0.869887, 2.89264, 8.66295 )
-mesh = SubResource( 7 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="SpotLight" type="SpotLight" parent="Lightbulb"]
@@ -343,7 +344,7 @@ spot_range = 22.2
 
 [node name="RedLightbulb" type="MeshInstance" parent="."]
 transform = Transform( 0.230184, 0, 0, 0, 0.533967, 0, 0, 0, 0.0946297, 6.5017, 2.89264, 11.8338 )
-mesh = SubResource( 7 )
+mesh = SubResource( 5 )
 material/0 = null
 
 [node name="SpotLight" type="SpotLight" parent="RedLightbulb"]

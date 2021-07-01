@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/AK47.glb-42ce566978b8fdb17d54a240ffdd2ed0.scn"
+path="res://.import/AK47.glb-cc6fb3dac29344ea5488870382755471.scn"
 
 [deps]
 
-source_file="res://MyWeapons/AK47.glb"
-dest_files=[ "res://.import/AK47.glb-42ce566978b8fdb17d54a240ffdd2ed0.scn" ]
+source_file="res://MyWeapons/badgun/AK47.glb"
+dest_files=[ "res://.import/AK47.glb-cc6fb3dac29344ea5488870382755471.scn" ]
 
 [params]
 

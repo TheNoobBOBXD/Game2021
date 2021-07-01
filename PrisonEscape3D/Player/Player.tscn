@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player/FPSscript.gd" type="Script" id=1]
 [ext_resource path="res://crosshair.png" type="Texture" id=2]
-[ext_resource path="res://MyWeapons/Shotgun.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Player/CurrentWeapon.gd" type="Script" id=3]
 [ext_resource path="res://Player/Interaction.gd" type="Script" id=4]
+[ext_resource path="res://MyWeapons/Ak47.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.75
@@ -33,10 +34,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.899069, 0 )
 [node name="Camera" type="Camera" parent="Head"]
 
 [node name="TextureRect" type="TextureRect" parent="Head/Camera"]
-margin_left = 940.0
-margin_top = 520.0
-margin_right = 980.0
-margin_bottom = 560.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -52,5 +57,8 @@ cast_to = Vector3( 0, 0, -5 )
 collision_mask = 2
 script = ExtResource( 4 )
 
-[node name="Shotgun" parent="Head/Camera" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.899069, 0 )
+[node name="CurrentWeapon" type="Position3D" parent="Head/Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.550463, -0.463738, -1.01678 )
+script = ExtResource( 3 )
+
+[node name="Ak47" parent="Head/Camera/CurrentWeapon" instance=ExtResource( 5 )]
