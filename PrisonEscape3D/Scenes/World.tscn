@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://default_env.tres" type="Environment" id=2]
 [ext_resource path="res://Interactable/InteractableLightSwitch.gd" type="Script" id=3]
 [ext_resource path="res://Enemy/Enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://GodotWallandFloor/Walltexture1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://MYcreations/scifisword.glb" type="PackedScene" id=6]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -366,3 +367,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83011, -1.41506, -3.04237 )
 
 [node name="Walltexture2" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83011, -1.41506, -5.02345 )
+
+[node name="scifisword" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.5, 0, 0, 0, 0.4, 0, 0, 0, -0.2, -6.87759, 1.73671, 25.7491 )
