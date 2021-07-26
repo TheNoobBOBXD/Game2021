@@ -36,5 +36,6 @@ func check_collision():
 			if collider.is_in_group("Enemies"):
 				print("damage enemy")
 				collider.health -=weapon_damage
+#				$HealthBar3D.update(health, max_health) #MYCODDDDETEST
 				if collider.health <=0:
 					collider.queue_free()

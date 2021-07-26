@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Enemy/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://health/Healthbar3d.tscn" type="PackedScene" id=2]
+[ext_resource path="res://health/TextureProgress.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleMesh" id=1]
 
@@ -40,6 +42,17 @@ polygon = PoolVector2Array( 0, 0, 15, 6, 15, -6 )
 [node name="RayCast" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.435112, 0 )
 cast_to = Vector3( 0, 0, -16 )
+
+[node name="HealthBar3D" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.77334, 0 )
+
+[node name="Viewport" type="Viewport" parent="HealthBar3D"]
+size = Vector2( 200, 26 )
+transparent_bg = true
+usage = 0
+render_target_v_flip = true
+
+[node name="TextureProgress" parent="HealthBar3D/Viewport" instance=ExtResource( 3 )]
 
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]

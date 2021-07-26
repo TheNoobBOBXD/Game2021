@@ -24,7 +24,7 @@ func _process(delta):
 		add_child(gun)
 		
 	if Input.is_action_just_pressed("weapon2"):
-		print("change to Shotty")
+		print("change to Shawty")
 		get_child(0).queue_free()
 		var gun = weapon2.instance()
 		gun.transform = Transform.IDENTITY
