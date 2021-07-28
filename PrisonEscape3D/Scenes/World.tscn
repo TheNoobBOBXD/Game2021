@@ -18,7 +18,7 @@ albedo_color = Color( 1, 0, 0, 1 )
 transform = Transform( 1.41337, 0, 0, 0, 1.41337, 0, 0, 0, 1.41337, 0, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.24517, -8.4344e-08, 21.2259 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.24517, -8.4344e-08, 21.9883 )
 jump_power = 25
 
 [node name="Groundbase" type="MeshInstance" parent="."]
