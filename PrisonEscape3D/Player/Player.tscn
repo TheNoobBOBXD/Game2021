@@ -32,6 +32,8 @@ material/0 = null
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.899069, 0 )
 
 [node name="Camera" type="Camera" parent="Head"]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0 )
+fov = 42.5
 
 [node name="TextureRect" type="TextureRect" parent="Head/Camera"]
 anchor_left = 0.5
