@@ -15,7 +15,7 @@ albedo_color = Color( 1, 0, 0, 1 )
 [sub_resource type="CapsuleMesh" id=4]
 
 [node name="World" type="Spatial"]
-transform = Transform( 1.41337, 0, 0, 0, 1.41337, 0, 0, 0, 1.41337, 0, 0, 0 )
+transform = Transform( 2.826, 0, 0, 0, 2.826, 0, 0, 0, 2.826, 0, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -4.9527, -8.4344e-08, 11.3754 )

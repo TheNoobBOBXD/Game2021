@@ -1,5 +1,6 @@
 extends KinematicBody
 
+#Variables for the player
 #var speed
 #export var sprint_speed = 20
 #export var default_speed = 10
@@ -20,6 +21,7 @@ var camera_x_rotation = 0
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
+#when the mouse moves, it stops if u look straight down or straight up 90 degrees. (can't break neck
 func _input(event):
 	if event is InputEventMouseMotion:
 		head.rotate_y(deg2rad(-event.relative.x * mouse_sensitivity))

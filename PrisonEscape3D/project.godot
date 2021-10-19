@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="PrisonEscape3D"
-run/main_scene="res://Scenes/World.tscn"
+run/main_scene="res://TitleScreen/TitleScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
