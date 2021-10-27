@@ -5,8 +5,10 @@
 [node name="Settings" instance=ExtResource( 1 )]
 
 [node name="VBoxContainer" parent="CenterContainer" index="0"]
-margin_left = 520.0
-margin_right = 759.0
+margin_left = 480.0
+margin_top = 316.0
+margin_right = 719.0
+margin_bottom = 384.0
 
 [node name="Label" parent="CenterContainer/VBoxContainer" index="0"]
 margin_right = 239.0
