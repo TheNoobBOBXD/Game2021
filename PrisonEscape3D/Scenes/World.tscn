@@ -1,59 +1,28 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://default_env.tres" type="Environment" id=2]
-[ext_resource path="res://Interactable/InteractableLightSwitch.gd" type="Script" id=3]
+[ext_resource path="res://PressButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Enemy/EnemyZombie.tscn" type="PackedScene" id=4]
+[ext_resource path="res://3DScenes/BigRoomDeadEnd.tscn" type="PackedScene" id=5]
+[ext_resource path="res://3DScenes/Square4Exit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://3DScenes/StartingRoomMaybe.tscn" type="PackedScene" id=7]
+[ext_resource path="res://3DScenes/EEE.tscn" type="PackedScene" id=8]
+[ext_resource path="res://3DScenes/ShortPathStraight.tscn" type="PackedScene" id=9]
+[ext_resource path="res://3DScenes/LTurn.tscn" type="PackedScene" id=10]
+[ext_resource path="res://3DScenes/mediumroomdeadend.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Enemy/ShooterEnemyZombie.tscn" type="PackedScene" id=12]
 
-[sub_resource type="CubeMesh" id=1]
-
-[sub_resource type="ConcavePolygonShape" id=2]
-data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
-
-[sub_resource type="SpatialMaterial" id=3]
-albedo_color = Color( 1, 0, 0, 1 )
-
-[sub_resource type="CapsuleMesh" id=4]
+[sub_resource type="CapsuleMesh" id=1]
 
 [node name="World" type="Spatial"]
 transform = Transform( 2.826, 0, 0, 0, 2.826, 0, 0, 0, 2.826, 0, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -4.9527, -8.4344e-08, 11.3754 )
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.10869, 1.5183, 1.33183 )
 
-[node name="Groundbase" type="MeshInstance" parent="."]
-transform = Transform( 2.92253, 0, 0, 0, 1, 0, 0, 0, 8.05365, -4.41974, -1.25415, 2.51287 )
-mesh = SubResource( 1 )
-material/0 = null
-
-[node name="StaticBody" type="StaticBody" parent="Groundbase"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Groundbase/StaticBody"]
-shape = SubResource( 2 )
-
-[node name="Groundbase2" type="MeshInstance" parent="."]
-transform = Transform( -0.662908, 0, 0, 0, 0.0999999, 0, 0, 0, -0.631677, -5.14756, -0.696832, 11.3347 )
-mesh = SubResource( 1 )
-material/0 = null
-
-[node name="StaticBody" type="StaticBody" parent="Groundbase2"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Groundbase2/StaticBody"]
-shape = SubResource( 2 )
-
-[node name="Button" type="MeshInstance" parent="."]
-transform = Transform( 0.589547, 0, 0, 0, 0.453779, 0, 0, 0, 0.194682, 0.779953, 0.278455, 9.0281 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 3 )
-
-[node name="StaticBody" type="StaticBody" parent="Button"]
-collision_layer = 2
-script = ExtResource( 3 )
-light = NodePath("../../Lightbulb/SpotLight")
-on_by_default = false
-
-[node name="CollisionShape" type="CollisionShape" parent="Button/StaticBody"]
-shape = SubResource( 2 )
+[node name="MeshInstance" parent="Player" index="1"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.382064, 0 )
 
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
@@ -88,17 +57,46 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Button" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.589547, 0, 0, 0, 0.453779, 0, 0, 0, 0.194682, -2.0509, 0.278455, -0.986054 )
+
 [node name="Lightbulb" type="MeshInstance" parent="."]
-transform = Transform( 0.230184, 0, 0, 0, 0.533967, 0, 0, 0, 0.0946297, 0.869887, 2.89264, 8.66295 )
-mesh = SubResource( 4 )
+transform = Transform( 0.230184, 0, 0, 0, 0.533967, 0, 0, 0, 0.0946297, -1.96097, 2.89264, -1.3512 )
+mesh = SubResource( 1 )
 material/0 = null
 
 [node name="SpotLight" type="SpotLight" parent="Lightbulb"]
-transform = Transform( 3.07376, 0, 0, 0, -3.26822e-07, 1.32504, 0, -7.47682, -5.79193e-08, -0.321029, 0.296734, -0.779938 )
+transform = Transform( 1.53728, 0, 0, 0, -1.63454e-07, 0.662695, 0, -3.73939, -9.2232e-07, -0.321029, 0.296734, -0.779938 )
 spot_range = 22.2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 2 )
 
+[node name="BigRoomDeadEnd" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8377, 0.865682, 0.127805 )
+
 [node name="EnemyZombie" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.55338, -0.358213, 0 )
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -15.2749, 1.11382, 0 )
+
+[node name="StartingRoomMaybe" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.176929, 0, 0 )
+
+[node name="Square4Exit" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.82024, 0, 0 )
+
+[node name="ShortPathStraight" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.78485, 0, -7.96178 )
+
+[node name="EEE" parent="." instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.8004, 0, 7.96178 )
+
+[node name="LTurn" parent="." instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.7834, 0, 2.01698 )
+
+[node name="mediumroomdeadend" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.431, 0, -18.4006 )
+
+[node name="ShooterEnemyZombie" parent="." instance=ExtResource( 12 )]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 6.01557, 0, 0.707714 )
+
+[editable path="Player"]

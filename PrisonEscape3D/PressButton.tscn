@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Interactable/InteractableLightSwitch.gd" type="Script" id=1]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="ConcavePolygonShape" id=2]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[node name="Button" type="MeshInstance"]
+transform = Transform( 0.589547, 0, 0, 0, 0.453779, 0, 0, 0, 0.194682, 0.779953, 0.278455, 9.0281 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+collision_layer = 2
+script = ExtResource( 1 )
+light = NodePath("../../Lightbulb/SpotLight")
+on_by_default = false
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 2 )
