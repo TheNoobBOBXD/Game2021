@@ -78,6 +78,12 @@ func uncrouch(delta):
 	print("uncrouch")
 	$CollisionShape.shape.height = 1.25
 
+func hit():
+	$Head/Camera/ColorRect.show()
+	$Head/Camera/Timer.start()
 
 
 
+
+func _on_Timer_timeout():
+	 $Head/Camera/ColorRect.hide()

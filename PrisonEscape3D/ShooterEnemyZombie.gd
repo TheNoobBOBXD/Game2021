@@ -4,6 +4,7 @@ var player
 var follow_player = false
 var move_speed = 100
 var can_shoot = false
+
 onready var bullet = preload("res://EnemyBullet.tscn")#load bullet scene here
 
 
@@ -15,9 +16,8 @@ func _ready():
 func _physics_process(delta):
 	if follow_player == true:
 		var pos = player.global_transform.origin
-		look_at(pos, Vector3.UP)
 		var facing = -global_transform.basis.z
-		
+		look_at(pos, Vector3.UP)
 		if $RayCast.get_collider() != null:
 			if $RayCast.get_collider().name == "Player":
 				move_and_slide(facing * move_speed * delta, Vector3.UP)
@@ -26,9 +26,12 @@ func _physics_process(delta):
 				$ShooterGhost/AnimationPlayer.play("GhostAnimation")
 				
 		if can_shoot:
-			var new_bullet = bullet.instance()
-			new_bullet.global_transform.origin = $Launcher.global_transform.origin
-			get_parent().add_child(new_bullet)
+			if $RayCast.get_collider() != null:
+				if $RayCast.get_collider().name == "Player":
+					Playerinfo.change_health(-5)
+					$RayCast.get_collider().hit()
+
+		
 			can_shoot = false
 			$Timer.start()
 
@@ -50,9 +53,9 @@ func _on_Area_body_exited(body):
 		print("lost player")
 		follow_player = false
 		can_shoot = false
+	pass
 
 
 func _on_Timer_timeout():
 	can_shoot = true
-	
 	pass # Replace with function body.

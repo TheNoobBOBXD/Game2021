@@ -19,10 +19,13 @@
 transform = Transform( 2.826, 0, 0, 0, 2.826, 0, 0, 0, 2.826, 0, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.10869, 1.5183, 1.33183 )
+transform = Transform( 0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, -1.46255, 0.456729, 0.624116 )
 
 [node name="MeshInstance" parent="Player" index="1"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.382064, 0 )
+
+[node name="Camera" parent="Player/Head" index="0"]
+transform = Transform( 0.786349, 0, 0, 0, 0.786349, 0, 0, 0, 0.786349, 0, 0.570103, 0 )
 
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
@@ -91,12 +94,15 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.78485, 0, -7.96178 )
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.8004, 0, 7.96178 )
 
 [node name="LTurn" parent="." instance=ExtResource( 10 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11.7834, 0, 2.01698 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.799, 0, -1.87545 )
 
 [node name="mediumroomdeadend" parent="." instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.431, 0, -18.4006 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.78486, 0, -19.816 )
 
 [node name="ShooterEnemyZombie" parent="." instance=ExtResource( 12 )]
-transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 6.01557, 0, 0.707714 )
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 7.78485, 0, 2.12314 )
+
+[node name="EnemyZombie2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 6.01557, 0, -2.477 )
 
 [editable path="Player"]

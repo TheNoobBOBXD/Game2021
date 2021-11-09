@@ -10,14 +10,17 @@ var direction
 
 # spawns the bullet and goes towarrds player
 func _ready():
+	
 	var player_pos = get_parent().get_node("Player").global_transform.origin
-	player_pos.y += 1
-	var bullet_pos = global_transform.origin
-	direction = player_pos - bullet_pos
-	direction = direction.normalized()
+	#player_pos.y += 1
+	#look_at(player_pos,Vector3.UP)
+	#var bullet_pos = global_transform.origin
+	#direction = player_pos - bullet_pos
+	#direction = direction.normalized()
 
 func _process(delta):
-	translate(direction * bullet_speed * delta)
+	pass
+	#translate(-global_transform.basis.z * bullet_speed * delta)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,5 +29,5 @@ func _process(delta):
 
 
 func _on_Area_body_entered(body):
-	if body.filename != "res://Scenes/ShooterZombie.tscn":
+	if not body.is_in_group("Enemy"):
 		queue_free()
