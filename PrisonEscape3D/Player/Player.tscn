@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player/FPSscript.gd" type="Script" id=1]
 [ext_resource path="res://crosshair.png" type="Texture" id=2]
@@ -14,7 +14,12 @@ height = 1.25
 radius = 0.75
 mid_height = 1.25
 
+[sub_resource type="CylinderShape" id=3]
+radius = 1.31911
+height = 2.72098
+
 [node name="Player" type="KinematicBody" groups=["Player"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
@@ -73,6 +78,15 @@ __meta__ = {
 
 [node name="Timer" type="Timer" parent="Head/Camera"]
 wait_time = 0.1
+one_shot = true
+
+[node name="Area" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 3 )
+
+[node name="Invis" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true
 
 [connection signal="timeout" from="Head/Camera/Timer" to="." method="_on_Timer_timeout"]

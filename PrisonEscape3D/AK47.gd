@@ -21,14 +21,21 @@ func _process(_delta):
 func fire():
 	print("fired weapon")
 	can_fire = false
-	
+	Playerinfo.change_ammo(-1)
 	check_collision()
+	check_hit()
 	$AK47Good/AnimationPlayer.play("Reload")
 	yield(get_tree().create_timer(fire_rate), "timeout")
 	can_fire = true
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func check_hit():
+	if $RayCast.is_colliding():
+		var collider = $RayCast.get_collider()
+		if collider.is_in_group("Enemy"):
+			$RayCast.get_collider().hit_zombie()
 
 func check_collision():
 	if $RayCast.is_colliding():

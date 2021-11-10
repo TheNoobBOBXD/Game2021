@@ -4,12 +4,18 @@ var player
 var follow_player = false
 var move_speed = 100
 var can_shoot = false
+var health = 2
 
 onready var bullet = preload("res://EnemyBullet.tscn")#load bullet scene here
 
 
 func _ready():
 	pass
+
+func hit_zombie():
+	health -= 1
+	if health <= 0:
+		queue_free()
 
 
 
@@ -24,14 +30,11 @@ func _physics_process(delta):
 				$ShooterGhost/AnimationPlayer.play("BadGhostshoot")
 			else:
 				$ShooterGhost/AnimationPlayer.play("GhostAnimation")
-				
 		if can_shoot:
 			if $RayCast.get_collider() != null:
 				if $RayCast.get_collider().name == "Player":
 					Playerinfo.change_health(-5)
 					$RayCast.get_collider().hit()
-
-		
 			can_shoot = false
 			$Timer.start()
 

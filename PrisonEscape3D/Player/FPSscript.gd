@@ -31,8 +31,17 @@ func _input(event):
 			camera.rotate_x(deg2rad(-x_delta))
 			camera_x_rotation += x_delta
 
+func check_hit():
+	if $Head/Camera/RayCast.is_colliding():
+		var collider = $Head/Camera/RayCast.get_collider()
+		if collider.is_in_group("Enemy"):
+			$Head/Camera/RayCast.get_collider().hit_zombie()
+
 func _process(delta):
-	if Input.is_action_just_pressed("ui_cancel"):
+	if Input.is_action_just_pressed("ui_cancel") and Playerinfo.has_ammo():
+		
+		check_hit()
+		
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _physics_process(delta):

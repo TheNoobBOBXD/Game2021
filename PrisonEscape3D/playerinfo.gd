@@ -38,6 +38,7 @@ func get_lives():
 	
 func has_ammo():
 	return ammo > 0
+	print(ammo)
 	
 func reset():
 	health = health_max

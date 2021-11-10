@@ -9,6 +9,10 @@
 size = 27
 font_data = ExtResource( 4 )
 
+[sub_resource type="DynamicFont" id=4]
+size = 14
+font_data = ExtResource( 4 )
+
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.94902, 0.12549, 0.12549, 1 )
 border_width_left = 4
@@ -25,10 +29,6 @@ corner_radius_top_left = 1
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 1
-
-[sub_resource type="DynamicFont" id=4]
-size = 14
-font_data = ExtResource( 4 )
 
 [node name="UserInterface" type="Control"]
 anchor_right = 1.0
@@ -53,7 +53,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AmmoPicture" type="TextureRect" parent="AmmoCount"]
+[node name="AmmoCountPicture" type="TextureRect" parent="AmmoCount"]
 margin_left = -13.0
 margin_top = -9.5
 margin_bottom = 33.5
@@ -92,9 +92,9 @@ margin_left = 20.0
 margin_top = 20.0
 margin_right = 400.0
 margin_bottom = 60.0
+custom_fonts/font = SubResource( 4 )
 custom_styles/fg = SubResource( 2 )
 custom_styles/bg = SubResource( 3 )
-custom_fonts/font = SubResource( 4 )
 value = 69.0
 rounded = true
 __meta__ = {

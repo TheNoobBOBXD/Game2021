@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://default_env.tres" type="Environment" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://3DScenes/LTurn.tscn" type="PackedScene" id=10]
 [ext_resource path="res://3DScenes/mediumroomdeadend.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Enemy/ShooterEnemyZombie.tscn" type="PackedScene" id=12]
+[ext_resource path="res://TestingToMakeUI/SceneforUI/UserInterface.tscn" type="PackedScene" id=13]
 
 [sub_resource type="CapsuleMesh" id=1]
 
@@ -30,19 +31,6 @@ transform = Transform( 0.786349, 0, 0, 0, 0.786349, 0, 0, 0, 0.786349, 0, 0.5701
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="UI"]
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -331.0
-margin_top = -155.0
-text = "Ammo
-2/2"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -104,5 +92,7 @@ transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 7.78485, 0, 2.12314 )
 
 [node name="EnemyZombie2" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 6.01557, 0, -2.477 )
+
+[node name="UserInterface" parent="." instance=ExtResource( 13 )]
 
 [editable path="Player"]
