@@ -90,6 +90,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.78486, 0, -19.816 )
 [node name="ShooterEnemyZombie" parent="." instance=ExtResource( 12 )]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 7.78485, 0, 2.12314 )
 
+[node name="ShooterEnemyZombie2" parent="." instance=ExtResource( 12 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 7.431, 0.353857, -1.41543 )
+
 [node name="EnemyZombie2" parent="." instance=ExtResource( 4 )]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 6.01557, 0, -2.477 )
 
