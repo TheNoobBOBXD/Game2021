@@ -31,10 +31,78 @@ func fire():
 
 
 func check_hit():
-	if $RayCast.is_colliding():
+	if $RayCast.is_colliding() or $RayCast1.is_colliding() or $RayCast2.is_colliding() or $RayCast3.is_colliding() or $RayCast4.is_colliding() or $RayCast5.is_colliding() or $RayCast6.is_colliding() or $RayCast7.is_colliding() or $RayCast8.is_colliding():
 		var collider = $RayCast.get_collider()
 		if collider.is_in_group("Enemy"):
+			#for $RayCast in $RayCast.is_colliding():
 			$RayCast.get_collider().hit_zombie()
+		else:
+			pass
+			
+		var collider1 = $RayCast1.get_collider()
+		if collider1.is_colliding():
+			if collider1.is_in_group("Enemy"):
+				#for $RayCast in $RayCast.is_colliding():
+				$RayCast1.get_collider().hit_zombie()
+			else:
+				pass
+			
+		var collider2 = $RayCast2.get_collider()
+		if collider2.is_colliding():
+			if collider2.is_in_group("Enemy"):
+				#for $RayCast in $RayCast.is_colliding():
+				$RayCast2.get_collider().hit_zombie()
+			else:
+				pass
+			
+		var collider3 = $RayCast3.get_collider()
+		if collider3.is_colliding():
+			if collider3.is_in_group("Enemy"):
+				#for $RayCast in $RayCast.is_colliding():
+				$RayCast3.get_collider().hit_zombie()
+			else:
+				pass
+			
+		var collider4 = $RayCast4.get_collider()
+		if collider4.is_colliding():
+			if collider4.is_in_group("Enemy"):
+				#for $RayCast in $RayCast.is_colliding():
+				$RayCast4.get_collider().hit_zombie()
+			else:
+				pass
+			
+		var collider5 = $RayCast5.get_collider()
+		if collider5.is_colliding():
+			if collider5.is_in_group("Enemy"):
+				#for $RayCast in $RayCast.is_colliding():
+				$RayCast5.get_collider().hit_zombie()
+			else:
+				pass
+		
+		var collider6 = $RayCast6.get_collider()
+		if collider6.is_colliding():
+			if collider6.is_in_group("Enemy"):
+				#for $RayCast in $RayCast.is_colliding():
+				$RayCast6.get_collider().hit_zombie()
+			else:
+				pass
+			
+		var collider7 = $RayCast7.get_collider()
+		if collider7.is_colliding():
+			if collider7.is_in_group("Enemy"):
+				#for $RayCast in $RayCast.is_colliding():
+				$RayCast7.get_collider().hit_zombie()
+			else:
+				pass
+				
+		var collider8 = $RayCast8.get_collider()
+		if collider8.is_colliding():
+			if collider8.is_in_group("Enemy"):
+				#for $RayCast in $RayCast.is_colliding():
+				$RayCast8.get_collider().hit_zombie()
+			else:
+				pass
+
 
 func check_collision():
 	for ray in rays:

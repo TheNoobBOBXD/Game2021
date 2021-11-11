@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://3DScenes/StartingRoomMaybe.tscn" type="PackedScene" id=2]
@@ -19,8 +19,12 @@
 [ext_resource path="res://3DScenes/LTurn.tscn" type="PackedScene" id=17]
 [ext_resource path="res://3DScenes/BigRoomNoExits.tscn" type="PackedScene" id=18]
 [ext_resource path="res://TestingToMakeUI/SceneforUI/UserInterface.tscn" type="PackedScene" id=19]
+[ext_resource path="res://3DScenes/Cube.tscn" type="PackedScene" id=20]
 
 [node name="World" type="Spatial"]
+
+[node name="Cube" parent="." instance=ExtResource( 20 )]
+transform = Transform( -51.3897, 1.74133e-07, 0, -2.25551e-06, -1, 0, 0, 0, 45.684, 18.7544, 2.96476, 0 )
 
 [node name="LTurn" parent="." instance=ExtResource( 17 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 27.7 )

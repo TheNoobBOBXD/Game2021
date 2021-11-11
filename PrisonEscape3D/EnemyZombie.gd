@@ -6,7 +6,7 @@ var move_speed = 200
 var can_shoot = false
 var health = 2
 
-
+onready var bullet = preload("res://EnemyBullet.tscn")#
 
 func _ready():
 	pass
