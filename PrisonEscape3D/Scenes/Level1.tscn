@@ -1,8 +1,20 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://3DScenes/StartingRoomMaybe.tscn" type="PackedScene" id=2]
 [ext_resource path="res://PressButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://3DScenes/BigRoomDeadEnd.tscn" type="PackedScene" id=4]
+[ext_resource path="res://3DScenes/Square3ExitLoopySmall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://3DScenes/Sbend.tscn" type="PackedScene" id=6]
+[ext_resource path="res://3DScenes/mediumroomdeadend.tscn" type="PackedScene" id=7]
+[ext_resource path="res://3DScenes/ShortPathStraight.tscn" type="PackedScene" id=8]
+[ext_resource path="res://3DScenes/EEE.tscn" type="PackedScene" id=9]
+[ext_resource path="res://3DScenes/VeryLongPath.tscn" type="PackedScene" id=10]
+[ext_resource path="res://3DScenes/1wall.tscn" type="PackedScene" id=11]
+[ext_resource path="res://3DScenes/3PinConnect.tscn" type="PackedScene" id=12]
+[ext_resource path="res://3DScenes/Straightconnect.tscn" type="PackedScene" id=13]
+[ext_resource path="res://3DScenes/Mpath.tscn" type="PackedScene" id=14]
+[ext_resource path="res://3DScenes/levelchange.tscn" type="PackedScene" id=15]
 
 [node name="Level" type="Spatial"]
 
@@ -13,3 +25,42 @@ transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.5, 0 )
 
 [node name="Button" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.589547, 0, 0, 0, 0.453779, 0, 0, 0, 0.194682, -2.05956, 0.956984, -0.900088 )
+
+[node name="ShortPathStraight" parent="." instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 0, 0 )
+
+[node name="Square3ExitLoopySmall" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 1 )
+
+[node name="Sbend" parent="." instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 0, -8 )
+
+[node name="Mpath" parent="." instance=ExtResource( 14 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 30, 0, 8 )
+
+[node name="mediumroomdeadend" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -12 )
+
+[node name="BigRoomDeadEnd" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -22 )
+
+[node name="3PinConnect" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -12 )
+
+[node name="VeryLongPath" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 14 )
+
+[node name="Straightconnect" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0 )
+
+[node name="EEE" parent="." instance=ExtResource( 9 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, 0, 31.8 )
+
+[node name="Cube010" parent="." instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 24 )
+
+[node name="Cube005" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 27 )
+
+[node name="BigRoomDeadEnd2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, -13 )

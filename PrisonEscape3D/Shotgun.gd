@@ -4,7 +4,7 @@ extends Spatial
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var weapon_damage = 14
+var weapon_damage = 40
 var can_fire = true
 var fire_rate = 1
 onready var rays = [$RayCast,$RayCast1,$RayCast8,$RayCast2,$RayCast3,$RayCast4,$RayCast5,$RayCast6,$RayCast7]
