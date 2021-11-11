@@ -6,6 +6,7 @@ var ammo
 var ammo_max
 var lives
 var lives_max
+var current_level = 0
 
 func _ready():
 	health = 100
@@ -39,6 +40,10 @@ func get_lives():
 func has_ammo():
 	return ammo > 0
 	print(ammo)
-	
+
+func change_level():
+	current_level += 1
+	get_tree().change_scene("res://Scenes/Level" + str(current_level) +".tscn")
+
 func reset():
 	health = health_max

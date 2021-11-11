@@ -7,7 +7,7 @@ func _ready():
 
 func _on_NewGameButton_pressed():
 	pass
-	get_tree().change_scene("res://Scenes/World.tscn")
+	get_tree().change_scene("res://Scenes/Level0.tscn")
 	
 
 

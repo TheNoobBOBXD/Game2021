@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://3DScenes/StartingRoomMaybe.tscn" type="PackedScene" id=2]
@@ -15,8 +15,9 @@
 [ext_resource path="res://3DScenes/Straightconnect.tscn" type="PackedScene" id=13]
 [ext_resource path="res://3DScenes/Mpath.tscn" type="PackedScene" id=14]
 [ext_resource path="res://3DScenes/levelchange.tscn" type="PackedScene" id=15]
+[ext_resource path="res://TestingToMakeUI/SceneforUI/UserInterface.tscn" type="PackedScene" id=16]
 
-[node name="Level" type="Spatial"]
+[node name="World" type="Spatial"]
 
 [node name="StartingRoomMaybe" parent="." instance=ExtResource( 2 )]
 
@@ -56,11 +57,36 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0 )
 [node name="EEE" parent="." instance=ExtResource( 9 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10, 0, 31.8 )
 
-[node name="Cube010" parent="." instance=ExtResource( 15 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 24 )
-
 [node name="Cube005" parent="." instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 27 )
 
 [node name="BigRoomDeadEnd2" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, -13 )
+
+[node name="levelchange" parent="." instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.99402, 0, 23.8659 )
+
+[node name="UserInterface" parent="." instance=ExtResource( 16 )]
+
+[node name="UI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.445465
+margin_top = -1.33635
+margin_right = -0.445435
+margin_bottom = -1.33636
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InteractionLabel" type="Label" parent="UI"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -121.035
+margin_bottom = -46.0347
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
