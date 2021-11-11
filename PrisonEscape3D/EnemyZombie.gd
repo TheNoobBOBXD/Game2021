@@ -34,8 +34,11 @@ func _physics_process(delta):
 				if $RayCast.get_collider().name == "Player":
 					Playerinfo.change_health(-10)
 					$RayCast.get_collider().hit()
+					print("hoit")
 			can_shoot = false
+			
 			$Timer.start()
+
 
 
 func _on_Area_body_entered(body):

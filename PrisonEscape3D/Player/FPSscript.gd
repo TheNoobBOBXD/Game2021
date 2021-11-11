@@ -4,9 +4,9 @@ extends KinematicBody
 #var speed
 #export var sprint_speed = 20
 #export var default_speed = 10
-export var speed = 10
+export var speed = 20
 export var acceleration = 5
-export var gravity = 0.98
+export var gravity = 1.98
 export var jump_power = 30
 export var mouse_sensitivity = 0.2
 

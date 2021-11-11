@@ -7,47 +7,47 @@
 script = ExtResource( 2 )
 
 [node name="RayCast" type="RayCast" parent="." groups=["Ray"]]
-transform = Transform( 1, 0, 0, 0, 0.98751, -0.157555, 0, 0.157555, 0.98751, 0, 0, 0.0572703 )
+transform = Transform( 0.35, 0, 0, 0, 0.345628, -0.0551443, 0, 0.157555, 0.98751, 0, 0, 0.0572703 )
 enabled = true
 cast_to = Vector3( 0, 0, -16 )
 
 [node name="RayCast1" type="RayCast" parent="." groups=["Ray"]]
-transform = Transform( 1, 0, 0, 0, 0.999352, -0.0359983, 0, 0.0359983, 0.999352, 0, 0, 0.0572703 )
+transform = Transform( 0.35, 0, 0, 0, 0.349773, -0.0125994, 0, 0.0359983, 0.999352, 0, 0, 0.0572703 )
 enabled = true
 cast_to = Vector3( 0, 0, -16 )
 
 [node name="RayCast2" type="RayCast" parent="." groups=["Ray"]]
-transform = Transform( 0.985996, 0.0248831, 0.164902, 0, 0.988806, -0.149207, -0.166769, 0.147118, 0.974959, 0, 0, 0.0572703 )
+transform = Transform( 0.345099, 0.00870909, 0.0577157, 0, 0.346082, -0.0522224, -0.166769, 0.147118, 0.974959, 0, 0, 0.0572703 )
 enabled = true
 cast_to = Vector3( 0, 0, -16 )
 
 [node name="RayCast3" type="RayCast" parent="." groups=["Ray"]]
-transform = Transform( 0.995526, -0.0158052, -0.0931593, 0, 0.985911, -0.167268, 0.0944906, 0.166519, 0.9815, 0, 0, -0.103773 )
+transform = Transform( 0.348434, -0.00553182, -0.0326058, 0, 0.345069, -0.0585438, 0.0944906, 0.166519, 0.9815, 0, 0, -0.103773 )
 enabled = true
 cast_to = Vector3( 0, 0, -16 )
 
 [node name="RayCast4" type="RayCast" parent="." groups=["Ray"]]
-transform = Transform( 0.978581, 0, 0.205863, 0, 1, 0, -0.205863, 0, 0.978581, 0, 0, 0.0572703 )
+transform = Transform( 0.342503, 0, 0.072052, 0, 0.35, 0, -0.205863, 0, 0.978581, 0, 0, 0.0572703 )
 enabled = true
 cast_to = Vector3( 0, 0, -16 )
 
 [node name="RayCast5" type="RayCast" parent="." groups=["Ray"]]
-transform = Transform( 0.983524, 0, -0.180777, 0, 1, 0, 0.180777, 0, 0.983524, 0, 0, 0.0572703 )
+transform = Transform( 0.344233, 0, -0.0632719, 0, 0.35, 0, 0.180777, 0, 0.983524, 0, 0, 0.0572703 )
 enabled = true
 cast_to = Vector3( 0, 0, -16 )
 
 [node name="RayCast6" type="RayCast" parent="." groups=["Ray"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0572703 )
+transform = Transform( 0.35, 0, 0, 0, 0.35, 0, 0, 0, 1, 0, 0, 0.0572703 )
 enabled = true
 cast_to = Vector3( 0, 0, -16 )
 
 [node name="RayCast7" type="RayCast" parent="." groups=["Ray"]]
-transform = Transform( 1, 0, 0, 0, 0.999016, 0.0443517, 0, -0.0443517, 0.999016, 0, 0, 0.0572703 )
+transform = Transform( 0.35, 0, 0, 0, 0.349656, 0.0155231, 0, -0.0443517, 0.999016, 0, 0, 0.0572703 )
 enabled = true
 cast_to = Vector3( 0, 0, -16 )
 
 [node name="RayCast8" type="RayCast" parent="." groups=["Ray"]]
-transform = Transform( 1, 0, 0, 0, 0.99786, -0.0653857, 0, 0.0653857, 0.99786, 0, 0, 0.0572703 )
+transform = Transform( 0.35, 0, 0, 0, 0.349251, -0.022885, 0, 0.0653857, 0.99786, 0, 0, 0.0572703 )
 enabled = true
 cast_to = Vector3( 0, 0, -16 )
 

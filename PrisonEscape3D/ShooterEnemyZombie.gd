@@ -35,6 +35,10 @@ func _physics_process(delta):
 				if $RayCast.get_collider().name == "Player":
 					Playerinfo.change_health(-5)
 					$RayCast.get_collider().hit()
+					if Playerinfo.get_health() <= 0:
+						get_tree().reload_current_scene()
+						Playerinfo.change_lives(-1)
+						Playerinfo.reset()
 			can_shoot = false
 			$Timer.start()
 

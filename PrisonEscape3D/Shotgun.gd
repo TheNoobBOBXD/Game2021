@@ -22,7 +22,7 @@ func fire():
 	Playerinfo.change_ammo(-8)
 	check_collision()
 	check_hit()
-	$ShotgunGood/AnimationPlayer.play("Reload")
+	$ShotgunGood/AnimationPlayer.play("Reload") 
 	yield(get_tree().create_timer(fire_rate), "timeout")
 	can_fire = true
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -44,7 +44,8 @@ func check_collision():
 
 			if collider.is_in_group("Enemies"):
 				print("damage enemy")
-				collider.health -=weapon_damage
+				collider.health -=weapon_damage 
+			
 #				$HealthBar3D.update(health, max_health) #MYCODDDDETEST
 				if collider.health <=0:
 					collider.queue_free()

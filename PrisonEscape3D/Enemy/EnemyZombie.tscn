@@ -7,6 +7,7 @@
 
 [sub_resource type="CylinderShape" id=2]
 radius = 15.0
+height = 5.25648
 
 [node name="EnemyZombie" type="KinematicBody" groups=["Enemy"]]
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0 )
@@ -28,6 +29,7 @@ enabled = true
 cast_to = Vector3( 0, 0, -15 )
 
 [node name="Timer" type="Timer" parent="."]
+one_shot = true
 
 [node name="Ghost" parent="." instance=ExtResource( 2 )]
 transform = Transform( -0.33, 0, -2.62268e-08, 0, 0.3, 0, 2.88495e-08, 0, -0.3, 0, 0, 0 )
