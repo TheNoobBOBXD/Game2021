@@ -20,6 +20,6 @@ func _on_Area_body_entered(body):
 	if body.name == "Player":
 		print("Changing Level")
 		Playerinfo.change_level()
-		if Playerinfo.change_level() >=3:
-			get_tree().quit()
+#		if Playerinfo.change_level() ==3:
+#			get_tree().quit()
 	pass # Replace with function body.
