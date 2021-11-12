@@ -19,6 +19,7 @@ func _on_ControlButton_pressed():
 
 
 func _on_Settings_pressed():
+	
 	get_tree().change_scene("res://TitleScreen/Game/Settings.tscn")
 	
 

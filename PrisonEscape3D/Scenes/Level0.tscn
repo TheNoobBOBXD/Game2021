@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://3DScenes/Cube.tscn" type="PackedScene" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://3DScenes/Square4Exit.tscn" type="PackedScene" id=17]
 [ext_resource path="res://3DScenes/mediumroomdeadend.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Enemy/BossShooterEnemyZombie.tscn" type="PackedScene" id=19]
+[ext_resource path="res://3DScenes/1prisonwall.tscn" type="PackedScene" id=20]
 
 [sub_resource type="CapsuleMesh" id=1]
 
@@ -27,6 +28,7 @@ transform = Transform( 2.826, 0, 0, 0, 2.826, 0, 0, 0, 2.826, 0, 0, 0 )
 
 [node name="Cube" parent="." instance=ExtResource( 2 )]
 transform = Transform( -25.8, 8.74228e-08, 0, -2.25551e-06, -1, 0, 0, 0, 45.684, 18.7544, 2.96476, 0 )
+visible = false
 
 [node name="Player" parent="." instance=ExtResource( 16 )]
 transform = Transform( 0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, -0.754836, 1.16444, 0.624116 )
@@ -82,7 +84,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.78486, 0, -19.816 )
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 7.78485, 0, 6.73001 )
 
 [node name="ShooterEnemyZombie2" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 7.431, 0.353857, -14.8619 )
+transform = Transform( -0.519615, 0, -0.3, 0, 0.6, 0, 0.3, 0, -0.519615, 5.66171, 0.353857, -8.13862 )
 
 [node name="ShooterEnemyZombie3" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 5.23709, 0.353857, -17.9758 )
@@ -107,6 +109,30 @@ transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 9.12951, 0.353857, -17.2
 
 [node name="ShooterEnemyZombie10" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 10.8988, 0.353857, -17.2681 )
+
+[node name="ShooterEnemyZombie11" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.6, 0, -5.24537e-08, 0, 0.6, 0, 5.24537e-08, 0, -0.6, 14.9887, 0.353857, -15.4662 )
+
+[node name="ShooterEnemyZombie12" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.6, 0, -5.24537e-08, 0, 0.6, 0, 5.24537e-08, 0, -0.6, 21.1806, 0.353857, -15.4662 )
+
+[node name="ShooterEnemyZombie15" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.3, 0, 0.519615, 0, 0.6, 0, -0.519615, 0, 0.3, 27.363, 0.353857, 1.67062 )
+
+[node name="ShooterEnemyZombie17" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.3, 0, 0.519615, 0, 0.6, 0, -0.519615, 0, 0.3, 21.4889, 0.353857, 6.09383 )
+
+[node name="ShooterEnemyZombie18" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.6, 0, -2.10915e-08, 0, 0.6, 0, 2.10915e-08, 0, 0.6, 15.7918, 0.353857, 4.11223 )
+
+[node name="ShooterEnemyZombie16" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.424264, 0, 0.424264, 0, 0.6, 0, -0.424264, 0, -0.424264, 27.363, 0.353857, 7.33233 )
+
+[node name="ShooterEnemyZombie13" parent="." instance=ExtResource( 3 )]
+transform = Transform( -2.62268e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.62268e-08, 21.1806, 0.353857, -9.87177 )
+
+[node name="ShooterEnemyZombie14" parent="." instance=ExtResource( 3 )]
+transform = Transform( 7.86805e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, 7.86805e-08, 14.1907, 0.353857, -9.87177 )
 
 [node name="EnemyZombie2" parent="." instance=ExtResource( 14 )]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 6.01557, 0, -1.81841 )
@@ -154,5 +180,8 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 17.339,
 
 [node name="BossShooterEnemyZombie" parent="." instance=ExtResource( 19 )]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 7.07714, 0, -1.86058 )
+
+[node name="Cube008" parent="." instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 28.4855, 0, 7.82024 )
 
 [editable path="Player"]

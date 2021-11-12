@@ -1,9 +1,9 @@
 extends Spatial
 
 
-var weapon_damage = 33
+var weapon_damage = 29
 var can_fire = true
-var fire_rate = 0.1
+var fire_rate = 0.11
 # Called when the node enters the scene tree for the first time.
 onready var ray = [$RayCast]
 
