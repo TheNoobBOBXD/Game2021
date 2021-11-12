@@ -16,14 +16,20 @@ func _ready():
 	ammo_max = 1000
 	lives = 4
 	lives_max = 5
-	
+
 func change_health(amount):
 	health += amount
 	health = clamp(health,0, health_max)
+
+
+	 
 	
+	
+
 func change_ammo(amount):
 	ammo += amount
 	ammo = clamp(ammo, 0, ammo_max)
+	
 
 func change_lives(amount):
 	lives += amount

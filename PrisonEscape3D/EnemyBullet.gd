@@ -18,7 +18,7 @@ func _ready():
 	#direction = player_pos - bullet_pos
 	#direction = direction.normalized()
 
-func _process(delta):
+func _process(_delta):
 	pass
 	#translate(-global_transform.basis.z * bullet_speed * delta)
 

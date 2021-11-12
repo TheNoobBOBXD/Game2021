@@ -10,7 +10,7 @@ size = Vector3( 0.15, 0.15, 0.15 )
 [node name="CPUParticles" type="CPUParticles"]
 emitting = false
 amount = 69
-lifetime = 0.88
+lifetime = 2.47
 one_shot = true
 speed_scale = 1.5
 explosiveness = 0.69

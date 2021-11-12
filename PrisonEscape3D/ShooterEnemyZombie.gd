@@ -6,6 +6,7 @@ var move_speed = 100
 var can_shoot = false
 var health = 2
 
+onready var blood  = preload("res://Particles/Blood.tscn")
 onready var bullet = preload("res://EnemyBullet.tscn")#load bullet scene here
 
 
@@ -14,8 +15,16 @@ func _ready():
 
 func hit_zombie():
 	health -= 1
-	if health <= 0:
+	if health <= 0: #when the zombie dies it will 'dissapear' 
+		var a = blood.instance()
+		a.global_transform = global_transform
+		#a.global_transform.origin = $Raycast.get_collision_point()
+		get_parent().add_child(a)
+		a.set_emitting(true)
+		print("splat")
 		queue_free()
+	else:
+		pass
 
 
 

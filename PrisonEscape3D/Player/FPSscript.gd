@@ -10,7 +10,7 @@ export var gravity = 1.98
 export var jump_power = 30
 export var mouse_sensitivity = 0.2
 
-
+#onready var spark = preload("res://Particles/Spark.tscn")
 
 onready var head = $Head
 onready var camera = $Head/Camera
@@ -36,6 +36,13 @@ func check_hit():
 		var collider = $Head/Camera/RayCast.get_collider()
 		if collider.is_in_group("Enemy"):
 			$Head/Camera/RayCast.get_collider().hit_zombie()
+#		else:
+#			var a = spark.instance()
+#			a.global_transform.origin = $Head/Camera/Raycast.get_collision_point()
+#			a.set_emitting(true)
+#			print("sparky")
+
+
 
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel") and Playerinfo.has_ammo():

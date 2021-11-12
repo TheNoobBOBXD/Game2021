@@ -7,7 +7,8 @@
 radius = 15.0
 
 [sub_resource type="CylinderShape" id=1]
-radius = 0.8
+radius = 0.737039
+height = 2.2
 
 [node name="ShooterEnemyZombie" type="KinematicBody" groups=["Enemy"]]
 script = ExtResource( 2 )
@@ -27,7 +28,7 @@ wait_time = 0.41
 one_shot = true
 
 [node name="Launcher" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, -1.3105 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, -0.0105 )
 
 [node name="ShooterGhost" parent="." instance=ExtResource( 1 )]
 transform = Transform( -0.25, 0, -2.18557e-08, 0, 0.25, 0, 2.18557e-08, 0, -0.25, 0, 0, 0 )

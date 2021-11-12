@@ -164,6 +164,7 @@ Produced by Emmanuel K"
 
 [node name="FadeIn" parent="." instance=ExtResource( 6 )]
 visible = false
+color = Color( 0.180392, 0.12549, 0.12549, 0.160784 )
 
 [connection signal="pressed" from="Menu/CenterRow/Buttons/NewGameButton" to="." method="_on_NewGameButton_pressed"]
 [connection signal="pressed" from="Menu/CenterRow/Buttons/ControlButton" to="." method="_on_ControlButton_pressed"]

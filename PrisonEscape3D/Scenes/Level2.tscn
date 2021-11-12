@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://3DScenes/StartingRoomMaybe.tscn" type="PackedScene" id=2]
@@ -20,11 +20,14 @@
 [ext_resource path="res://3DScenes/BigRoomNoExits.tscn" type="PackedScene" id=18]
 [ext_resource path="res://TestingToMakeUI/SceneforUI/UserInterface.tscn" type="PackedScene" id=19]
 [ext_resource path="res://3DScenes/Cube.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Enemy/ShooterEnemyZombie.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Enemy/BossShooterEnemyZombie.tscn" type="PackedScene" id=22]
 
 [node name="World" type="Spatial"]
 
 [node name="Cube" parent="." instance=ExtResource( 20 )]
 transform = Transform( -51.3897, 1.74133e-07, 0, -2.25551e-06, -1, 0, 0, 0, 45.684, 18.7544, 2.96476, 0 )
+visible = false
 
 [node name="LTurn" parent="." instance=ExtResource( 17 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 27.7 )
@@ -112,3 +115,15 @@ __meta__ = {
 }
 
 [node name="UserInterface" parent="." instance=ExtResource( 19 )]
+
+[node name="ShooterEnemyZombie" parent="." instance=ExtResource( 21 )]
+transform = Transform( -0.3, 0, 0.519615, 0, 0.6, 0, -0.519615, 0, -0.3, 8, 0, 0 )
+
+[node name="ShooterEnemyZombie2" parent="." instance=ExtResource( 21 )]
+transform = Transform( -0.155291, 0, 0.579556, 0, 0.6, 0, -0.579556, 0, -0.155291, 16, 0, -15 )
+
+[node name="ShooterEnemyZombie3" parent="." instance=ExtResource( 21 )]
+transform = Transform( -0.424264, 0, -0.424264, 0, 0.6, 0, 0.424264, 0, -0.424264, 9, 0, -16 )
+
+[node name="BossShooterEnemyZombie" parent="." instance=ExtResource( 22 )]
+transform = Transform( 0.155291, 0, 0.579556, 0, 0.6, 0, -0.579556, 0, 0.155291, 19, 0.4, 2 )
