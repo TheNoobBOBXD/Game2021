@@ -88,7 +88,7 @@ func _physics_process(delta):
 #when crouch is pressed
 func crouch(delta):
 	print("crouch")
-	$CollisionShape.shape.height = 0.75 #makes it smaller - crouching like
+	$CollisionShape.shape.height = 0.69 #makes it smaller - crouching like
 	speed = 6.9 #~~memes~~ moves slower 
 	mouse_sensitivity = 0.15 #look around slower
 	jump_power = 15 #can't jump as well 

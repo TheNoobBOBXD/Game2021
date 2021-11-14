@@ -1,8 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://3DScenes/Cube.tscn" type="PackedScene" id=2]
+[ext_resource path="res://3DScenes/1wall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://3DScenes/secretwall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://MYcreations/AmmoCrate.tscn" type="PackedScene" id=5]
 [ext_resource path="res://3DScenes/VeryLongPath.tscn" type="PackedScene" id=6]
+[ext_resource path="res://MYcreations/Medpack.tscn" type="PackedScene" id=7]
 [ext_resource path="res://3DScenes/levelchange.tscn" type="PackedScene" id=8]
 [ext_resource path="res://3DScenes/StartingRoomMaybe.tscn" type="PackedScene" id=9]
 [ext_resource path="res://TestingToMakeUI/SceneforUI/UserInterface.tscn" type="PackedScene" id=10]
@@ -14,11 +18,34 @@
 transform = Transform( 2.826, 0, 0, 0, 2.826, 0, 0, 0, 2.826, 0, 0, 0 )
 
 [node name="CoverCube" parent="." instance=ExtResource( 2 )]
-transform = Transform( -25.8, 8.74228e-08, 0, -2.25551e-06, -1, 0, 0, 0, 45.684, 18.7544, 2.96476, 0 )
-visible = false
+transform = Transform( 1.86145e-06, -6.3075e-15, 75.4054, -2.25551e-06, -1, 0, 25.8, -8.74228e-08, -1.99691e-06, 35.0318, 2.96476, 0 )
+
+[node name="Medpack" parent="." instance=ExtResource( 7 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.71408, 0, 1.06157 )
+
+[node name="Medpack2" parent="." instance=ExtResource( 7 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6.29866, 0, 1.06157 )
+
+[node name="Medpack3" parent="." instance=ExtResource( 7 )]
+transform = Transform( -0.707107, 0, -0.707107, -0.353553, 0.866025, 0.353553, 0.612372, 0.5, -0.612372, 5.23708, 0, 0.353857 )
+
+[node name="Medpack4" parent="." instance=ExtResource( 7 )]
+transform = Transform( -0.707107, 0, 0.707107, -0.353553, 0.866025, -0.353553, -0.612372, -0.5, -0.612372, 5.23708, 0, 1.76929 )
+
+[node name="AmmoCrate" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.431, 0.2477, 0.353857 )
+
+[node name="AmmoCrate5" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.01557, 0.2477, 0.353857 )
+
+[node name="AmmoCrate2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.431, 0.2477, 1.76929 )
+
+[node name="AmmoCrate4" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.12173, 0.2477, 1.76929 )
 
 [node name="Player" parent="." instance=ExtResource( 16 )]
-transform = Transform( 0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, -0.754836, 1.16444, 0.624116 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.754836, 1.16444, 0.624116 )
 
 [node name="MeshInstance" parent="Player" index="1"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.382064, 0 )
@@ -34,14 +61,29 @@ mesh = SubResource( 1 )
 material/0 = null
 
 [node name="SpotLight" type="SpotLight" parent="Lightbulb"]
-transform = Transform( 1.53728, 0, 0, 0, -1.63454e-07, 0.662695, 0, -3.73939, -9.2232e-07, -0.321029, 0.296734, -0.779938 )
-spot_range = 22.2
+transform = Transform( 1.53728, 0, 0, 0, -1.63454e-07, 0.662695, 0, -3.73939, -9.22321e-07, 7.67281, -1.4586, -0.779939 )
+light_color = Color( 0.0745098, 0.0117647, 0.0117647, 1 )
+light_energy = 13.444
+spot_range = 563.845
+spot_angle = 51.67
+
+[node name="Lightbulb2" type="MeshInstance" parent="."]
+transform = Transform( 0.174492, 0.348248, 0, -0.150124, 0.404776, 0, 0, 0, 0.0946297, 94.7821, 4.30807, 0.878099 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="SpotLight" type="SpotLight" parent="Lightbulb2"]
+transform = Transform( 1.53728, 0, 0, 0, -1.63454e-07, 0.662695, 0, -3.73939, -9.22321e-07, 14.8468, -0.647018, -0.779939 )
+light_color = Color( 0.556863, 0.415686, 0.415686, 1 )
+light_energy = 1.74
+spot_range = 563.845
+spot_angle = 51.67
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 1 )
 
 [node name="StartingRoomMaybe" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.176929, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.460015, 0, 0.0707714 )
 
 [node name="VeryLongPath" parent="." instance=ExtResource( 6 )]
 transform = Transform( 4.2183e-08, 0, -1, 0, 1, 0, 1, 0, 4.2183e-08, 17.4098, 0, 1.06155 )
@@ -80,5 +122,29 @@ __meta__ = {
 
 [node name="levelchange" parent="." instance=ExtResource( 8 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 90.7997, 0, 1.06157 )
+
+[node name="Cube005" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.52937, 0, -0.920028 )
+
+[node name="Cube007" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.60014, 1.20752, 1.06157 )
+
+[node name="Cube008" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.56334, 1.20752, 1.06157 )
+
+[node name="Cube009" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1.91069e-15, -1, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, -1, 0, -4.37114e-08, 8.56334, 1.20752, 1.06157 )
+
+[node name="Cube010" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1.91069e-15, -1, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, -1, 0, -4.37114e-08, 6.54635, 1.20752, 1.06157 )
+
+[node name="Secretwall" parent="." instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.49257, -1.41543, 1.06157 )
+
+[node name="Secretwall2" parent="." instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.56476, -1.41543, 1.06157 )
+
+[node name="Cube006" parent="." instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.52937, 0, 3.04317 )
 
 [editable path="Player"]
