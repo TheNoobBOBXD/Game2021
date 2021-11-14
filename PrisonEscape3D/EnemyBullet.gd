@@ -1,6 +1,11 @@
 extends Spatial
 
 
+#THIS CODE DIDN"T WORK< AND I FULLY CHANGED IT TO MY OWN CODE
+
+
+
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"

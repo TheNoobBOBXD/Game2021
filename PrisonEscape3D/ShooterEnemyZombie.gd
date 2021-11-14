@@ -9,6 +9,8 @@ var health = 2
 onready var blood  = preload("res://Particles/Blood.tscn")
 onready var bullet = preload("res://EnemyBullet.tscn")#load bullet scene here
 
+var ammo_pack = preload("res://MYcreations/AmmoCrate.tscn")
+var med_pack = preload ("res://MYcreations/Medpack.tscn")
 
 func _ready():
 	pass

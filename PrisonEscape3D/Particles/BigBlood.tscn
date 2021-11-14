@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.92549, 0.054902, 0, 1 )
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 1 )
+size = Vector3( 0.15, 0.15, 0.15 )
+
+[node name="CPUParticles" type="CPUParticles"]
+emitting = false
+amount = 101
+lifetime = 2.42
+one_shot = true
+speed_scale = 1.5
+explosiveness = 0.69
+mesh = SubResource( 2 )
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3( 0, 3, 0 )
+spread = 42.0
+initial_velocity = 6.42

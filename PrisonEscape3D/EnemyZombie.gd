@@ -1,5 +1,11 @@
 extends KinematicBody
 #11.48 need to fix player
+
+
+
+#was my first creation, didn't end up using this much
+
+
 var player
 var follow_player = false
 var move_speed = 200

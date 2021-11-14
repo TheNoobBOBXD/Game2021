@@ -11,7 +11,6 @@
 [ext_resource path="res://3DScenes/StartingRoomMaybe.tscn" type="PackedScene" id=9]
 [ext_resource path="res://TestingToMakeUI/SceneforUI/UserInterface.tscn" type="PackedScene" id=10]
 [ext_resource path="res://3DScenes/ShortPathStraight.tscn" type="PackedScene" id=11]
-[ext_resource path="res://PressButton.tscn" type="PackedScene" id=12]
 [ext_resource path="res://3DScenes/LTurn.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Enemy/EnemyZombie.tscn" type="PackedScene" id=14]
 [ext_resource path="res://3DScenes/BigRoomDeadEnd.tscn" type="PackedScene" id=15]
@@ -19,9 +18,10 @@
 [ext_resource path="res://3DScenes/Square4Exit.tscn" type="PackedScene" id=17]
 [ext_resource path="res://3DScenes/mediumroomdeadend.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Enemy/BossShooterEnemyZombie.tscn" type="PackedScene" id=19]
-[ext_resource path="res://3DScenes/1prisonwall.tscn" type="PackedScene" id=20]
+[ext_resource path="res://3DScenes/secretwall.tscn" type="PackedScene" id=20]
 [ext_resource path="res://MYcreations/Medpack.tscn" type="PackedScene" id=21]
 [ext_resource path="res://MYcreations/AmmoCrate.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Enemy/v2ShooterEnemyZombie.tscn" type="PackedScene" id=23]
 
 [sub_resource type="CapsuleMesh" id=1]
 
@@ -29,14 +29,40 @@
 transform = Transform( 2.826, 0, 0, 0, 2.826, 0, 0, 0, 2.826, 0, 0, 0 )
 
 [node name="AmmoCrate" parent="." instance=ExtResource( 22 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.93701, 0.389243, 0.955414 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87544, 0.389243, 3.78627 )
+
+[node name="AmmoCrate2" parent="." instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0757, 0.389243, -15.6759 )
+
+[node name="AmmoCrate3" parent="." instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.0149, 0.389243, 5.90941 )
+
+[node name="AmmoCrate4" parent="." instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.0149, 0.389243, 9.80184 )
 
 [node name="Medpack" parent="." instance=ExtResource( 21 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.30007, 0.212314, 2.12314 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9774, 0.212314, 2.12314 )
 
-[node name="Cube" parent="." instance=ExtResource( 2 )]
+[node name="Medpack8" parent="." instance=ExtResource( 21 )]
+transform = Transform( 0.0119028, 0, 0.999929, 0, 1, 0, -0.999929, 0, 0.0119028, 17.9633, 0.388936, 7.76295 )
+
+[node name="Medpack7" parent="." instance=ExtResource( 21 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.516, 0.212314, 35.7396 )
+
+[node name="Medpack4" parent="." instance=ExtResource( 21 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 34.7323, 0.212314, 7.7411 )
+
+[node name="Medpack5" parent="." instance=ExtResource( 21 )]
+transform = Transform( -0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 34.7323, 0.212314, 5.26411 )
+
+[node name="Medpack6" parent="." instance=ExtResource( 21 )]
+transform = Transform( -0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 34.7323, 0.212314, 10.9258 )
+
+[node name="Medpack2" parent="." instance=ExtResource( 21 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.8698, 0.212314, -12.7389 )
+
+[node name="CoverCube" parent="." instance=ExtResource( 2 )]
 transform = Transform( -25.8, 8.74228e-08, 0, -2.25551e-06, -1, 0, 0, 0, 45.684, 18.7544, 2.96476, 0 )
-visible = false
 
 [node name="Player" parent="." instance=ExtResource( 16 )]
 transform = Transform( 0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, -0.754836, 1.16444, 0.624116 )
@@ -49,11 +75,8 @@ transform = Transform( 0.786349, 0, 0, 0, 0.786349, 0, 0, 0, 0.786349, 0, 0.2555
 
 [node name="UserInterface" parent="." instance=ExtResource( 10 )]
 
-[node name="Button" parent="." instance=ExtResource( 12 )]
-transform = Transform( 0.589547, 0, 0, 0, 0.453779, 0, 0, 0, 0.194682, -2.0509, 0.278455, -0.986054 )
-
 [node name="Lightbulb" type="MeshInstance" parent="."]
-transform = Transform( 0.230184, 0, 0, 0, 0.533967, 0, 0, 0, 0.0946297, -1.25326, 2.89264, 0.418085 )
+transform = Transform( 0.230184, 0, 0, 0, 0.533967, 0, 0, 0, 0.0946297, -1.25326, 2.89264, 0.878099 )
 mesh = SubResource( 1 )
 material/0 = null
 
@@ -91,35 +114,26 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.78486, 0, -19.816 )
 [node name="ShooterEnemyZombie" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 7.78485, 0, 6.73001 )
 
+[node name="ShooterEnemyZombie3" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.519615, 0, -0.3, 0, 0.6, 0, 0.3, 0, 0.519615, 13.4466, 0, 23.103 )
+
+[node name="ShooterEnemyZombie9" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.519615, 0, 0.3, 0, 0.6, 0, -0.3, 0, 0.519615, 21.2314, 0, 23.103 )
+
 [node name="ShooterEnemyZombie2" parent="." instance=ExtResource( 3 )]
 transform = Transform( -0.519615, 0, -0.3, 0, 0.6, 0, 0.3, 0, -0.519615, 5.66171, 0.353857, -8.13862 )
 
-[node name="ShooterEnemyZombie3" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 5.23709, 0.353857, -17.9758 )
-
 [node name="ShooterEnemyZombie4" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 3.82166, 0.353857, -17.9758 )
-
-[node name="ShooterEnemyZombie5" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 3.82166, 0.353857, -20.0989 )
+transform = Transform( -0.318848, 0, -0.508268, 0, 0.6, 0, 0.508268, 0, -0.318848, 3.82166, 0.353857, -17.9758 )
 
 [node name="ShooterEnemyZombie6" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 5.23709, 0.353857, -20.0989 )
-
-[node name="ShooterEnemyZombie7" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 10.8988, 0.353857, -20.0989 )
+transform = Transform( -0.5614, 0, -0.211732, 0, 0.6, 0, 0.211732, 0, -0.5614, 5.23709, 0.353857, -20.0989 )
 
 [node name="ShooterEnemyZombie8" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 9.12951, 0.353857, -20.0989 )
-
-[node name="ShooterEnemyZombie9" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 9.12951, 0.353857, -17.2681 )
+transform = Transform( -0.356329, 0, 0.482731, 0, 0.6, 0, -0.482731, 0, -0.356329, 9.12951, 0.353857, -20.0989 )
 
 [node name="ShooterEnemyZombie10" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 10.8988, 0.353857, -17.2681 )
-
-[node name="ShooterEnemyZombie11" parent="." instance=ExtResource( 3 )]
-transform = Transform( -0.6, 0, -5.24537e-08, 0, 0.6, 0, 5.24537e-08, 0, -0.6, 14.9887, 0.353857, -15.4662 )
 
 [node name="ShooterEnemyZombie12" parent="." instance=ExtResource( 3 )]
 transform = Transform( -0.6, 0, -5.24537e-08, 0, 0.6, 0, 5.24537e-08, 0, -0.6, 21.1806, 0.353857, -15.4662 )
@@ -133,11 +147,8 @@ transform = Transform( 0.3, 0, 0.519615, 0, 0.6, 0, -0.519615, 0, 0.3, 21.4889, 
 [node name="ShooterEnemyZombie18" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.6, 0, -2.10915e-08, 0, 0.6, 0, 2.10915e-08, 0, 0.6, 15.7918, 0.353857, 4.11223 )
 
-[node name="ShooterEnemyZombie16" parent="." instance=ExtResource( 3 )]
-transform = Transform( -0.424264, 0, 0.424264, 0, 0.6, 0, -0.424264, 0, -0.424264, 27.363, 0.353857, 7.33233 )
-
-[node name="ShooterEnemyZombie13" parent="." instance=ExtResource( 3 )]
-transform = Transform( -2.62268e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.62268e-08, 21.1806, 0.353857, -9.87177 )
+[node name="ShooterEnemyZombie19" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.6, 0, -3.13622e-08, 0, 0.6, 0, 3.13622e-08, 0, -0.6, 15.7918, 0.353857, -2.39874 )
 
 [node name="ShooterEnemyZombie14" parent="." instance=ExtResource( 3 )]
 transform = Transform( 7.86805e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, 7.86805e-08, 14.1907, 0.353857, -9.87177 )
@@ -186,7 +197,13 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 17.339,
 [node name="BossShooterEnemyZombie" parent="." instance=ExtResource( 19 )]
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 17.7061, 0, 25.5382 )
 
-[node name="Cube008" parent="." instance=ExtResource( 20 )]
-transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 28.4855, 0, 7.82024 )
+[node name="Cube006" parent="." instance=ExtResource( 20 )]
+transform = Transform( -4.37114e-08, -8.74228e-08, -1, -1, 4.37114e-08, 4.37114e-08, 4.37114e-08, 1, -8.74228e-08, 28.4855, 1.06157, 6.75867 )
+
+[node name="mediumroomdeadend" parent="Cube006" instance=ExtResource( 18 )]
+transform = Transform( -4.37114e-08, -1, 1.31134e-07, 1, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1.31134e-07, 1, 1.06157, 1.06157, -7.07714 )
+
+[node name="v2BossShooterEnemyZombie" parent="." instance=ExtResource( 23 )]
+transform = Transform( -0.6, 0, -5.24537e-08, 0, 0.6, 0, 5.24537e-08, 0, -0.6, 1.76933, 0, 4.954 )
 
 [editable path="Player"]

@@ -12,8 +12,8 @@ var level_count = 3
 func _ready():
 	health = 100
 	health_max = 100
-	ammo = 1000
-	ammo_max = 1000
+	ammo = 100
+	ammo_max = 5000
 	lives = 4
 	lives_max = 5
 
@@ -50,11 +50,12 @@ func has_ammo():
 	print(ammo)
 
 func change_level():
-	if current_level <= level_count:
+	if current_level < level_count:
 		current_level += 1
 		get_tree().change_scene("res://Scenes/Level" + str(current_level) +".tscn")
 		SoundPlayer.play("res://Sounds/Sfx/Pickup/Pickup_005.wav")
 	else:
+		#put game over here?
 		get_tree().quit()
 
 func reset():

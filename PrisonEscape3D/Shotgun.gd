@@ -1,9 +1,7 @@
 extends Spatial
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+# Declared variables here
 var weapon_damage = 35
 var can_fire = true
 var fire_rate = 1
@@ -13,34 +11,41 @@ func _ready():
 	pass
 
 func _process(delta):
-	if Input.is_action_just_pressed("primary_fire") and can_fire:
-		fire()
-		
-		SoundPlayer.play("res://Sounds/Sfx/LaserorShoot/Laser_001.wav")
-func fire():
+	if Input.is_action_just_pressed("primary_fire") and can_fire: #if it can fire...
+		if can_fire: 
+			if Playerinfo.ammo > 8: #When out of ammo it wouldn't shoot
+				fire() #it will fire and play fancy shotgun sound
+				SoundPlayer.play("res://Sounds/Sfx/LaserorShoot/Laser_001.wav")
+			else:
+				SoundPlayer.play("res://Sounds/Sfx/Hitorhurt/004.wav")
+				print("No shotammo") #no ammo will play dud sound like AK does
+				
+func fire(): #if it can fire
 	print("fired weapon")
 	can_fire = false
-	Playerinfo.change_ammo(-11)
+	Playerinfo.change_ammo(-8) #will remove 8 bullets instead of 1, as shotgun = more powerful = more bullets used up
 	check_collision()
-	check_hit()
-	$ShotgunGood/AnimationPlayer.play("Reload") 
-	yield(get_tree().create_timer(fire_rate), "timeout")
-	can_fire = true
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	check_hit() #checks the collision and what it hit
+	$ShotgunGood/AnimationPlayer.play("Reload") #will play the reload animation after evry shot
+	yield(get_tree().create_timer(fire_rate), "timeout") #can't shoot at the time being - 1 secound ish
+	can_fire = true #now time is up it can
+	
 
 
-func check_hit():
-	for ray in rays:
-		if ray.is_colliding():
+func check_hit(): #checks the hit
+	for ray in rays: #for the rays (how many rays actually hits collision) 
+		if ray.is_colliding():#rays include all 8!!! so each one will deal damage 
 			var collider = ray.get_collider()
-			if collider.is_in_group("Enemy"):
-				#for $RayCast in $RayCast.is_colliding():
-				collider.hit_zombie()
-				print("gottem")
+			if collider.is_in_group("Enemy"): #checks if it is an emeie
+				collider.hit_zombie() #will hit the zombie
+				print("gottem") #check if it worked...
 			else:
-				pass
+				pass #else it won't do anything if no rays hit
+
+
+#bellow is the old code I was trying to do - seperately for each different ray.
+#I wanted it so it was how many rays dealth that much damaage, not 1 ray deals ALL shot gun damge...
+#bellow was too bulky and didn't work properly and I changed the code to above code
 #	if $RayCast.is_colliding() or $RayCast1.is_colliding() or $RayCast2.is_colliding() or $RayCast3.is_colliding() or $RayCast4.is_colliding() or $RayCast5.is_colliding() or $RayCast6.is_colliding() or $RayCast7.is_colliding() or $RayCast8.is_colliding():
 #		var collider = $RayCast.get_collider()
 #		if collider.is_in_group("Enemy"):
@@ -115,10 +120,9 @@ func check_hit():
 #				pass
 
 
-func check_collision():
-	for ray in rays:
+func check_collision(): #checks the collision
+	for ray in rays: #used similar method here 
 		if ray.is_colliding():
-
 			var collider = ray.get_collider()
 
 			if collider.is_in_group("Enemies"):

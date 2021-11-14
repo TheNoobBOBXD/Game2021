@@ -5,14 +5,27 @@
 [node name="Settings" instance=ExtResource( 1 )]
 
 [node name="VBoxContainer" parent="CenterContainer" index="0"]
-margin_left = 480.0
-margin_top = 316.0
-margin_right = 719.0
-margin_bottom = 384.0
+margin_left = 528.0
+margin_top = 304.0
+margin_right = 672.0
+margin_bottom = 396.0
 
 [node name="Label" parent="CenterContainer/VBoxContainer" index="0"]
-margin_right = 239.0
-text = "Settings"
+margin_right = 144.0
+text = "Music"
 
-[node name="Button" parent="CenterContainer/VBoxContainer" index="1"]
-margin_right = 239.0
+[node name="Music" type="Button" parent="CenterContainer/VBoxContainer" index="1"]
+margin_top = 47.0
+margin_right = 144.0
+margin_bottom = 67.0
+text = "Click once for Music"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" parent="CenterContainer/VBoxContainer" index="2"]
+margin_top = 71.0
+margin_right = 144.0
+margin_bottom = 92.0
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Music" to="." method="_on_Music_pressed"]
