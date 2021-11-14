@@ -1,9 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
+[ext_resource path="res://3DScenes/BigRoomDeadEnd.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TitleScreen/Images/coollogo_com-84443575.png" type="Texture" id=2]
+[ext_resource path="res://3DScenes/Cube.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemy/ShooterEnemyZombie.tscn" type="PackedScene" id=4]
 [ext_resource path="res://TitleScreen/Images/Aquire-BW0ox.otf" type="DynamicFontData" id=5]
 [ext_resource path="res://TitleScreen/fade_in/FadeIn.tscn" type="PackedScene" id=6]
 [ext_resource path="res://TitleScreen/Scripts/title_screen.gd" type="Script" id=7]
+[ext_resource path="res://Enemy/BossShooterEnemyZombie.tscn" type="PackedScene" id=8]
+[ext_resource path="res://MyWeapons/badgun/AK47Model.tscn" type="PackedScene" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 54
@@ -165,6 +170,26 @@ Produced by Emmanuel K"
 [node name="FadeIn" parent="." instance=ExtResource( 6 )]
 visible = false
 color = Color( 0.180392, 0.12549, 0.12549, 0.160784 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.691268, 0 )
+
+[node name="BigRoomDeadEnd" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0962427, -6.03811 )
+
+[node name="Cube" parent="." instance=ExtResource( 3 )]
+transform = Transform( 8.8567, 0, 0, 0, 1, 0, 0, 0, 43.1875, 0, 2.07851, 0 )
+
+[node name="ShooterEnemyZombie" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, -0.939693, -4, 0, -11 )
+
+[node name="ShooterEnemyZombie2" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.939693, 0, 0.34202, 0, 1, 0, -0.34202, 0, -0.939693, 4, 0, -11 )
+
+[node name="BossShooterEnemyZombie" parent="." instance=ExtResource( 8 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 0.9, 0, 8.74228e-08, 0, -1, 0, 0, -10 )
+
+[node name="AK47Model" parent="." instance=ExtResource( 9 )]
 
 [connection signal="pressed" from="Menu/CenterRow/Buttons/NewGameButton" to="." method="_on_NewGameButton_pressed"]
 [connection signal="pressed" from="Menu/CenterRow/Buttons/ControlButton" to="." method="_on_ControlButton_pressed"]

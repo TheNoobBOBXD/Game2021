@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://3DScenes/Cube.tscn" type="PackedScene" id=2]
@@ -20,11 +20,19 @@
 [ext_resource path="res://3DScenes/mediumroomdeadend.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Enemy/BossShooterEnemyZombie.tscn" type="PackedScene" id=19]
 [ext_resource path="res://3DScenes/1prisonwall.tscn" type="PackedScene" id=20]
+[ext_resource path="res://MYcreations/Medpack.tscn" type="PackedScene" id=21]
+[ext_resource path="res://MYcreations/AmmoCrate.tscn" type="PackedScene" id=22]
 
 [sub_resource type="CapsuleMesh" id=1]
 
 [node name="World" type="Spatial"]
 transform = Transform( 2.826, 0, 0, 0, 2.826, 0, 0, 0, 2.826, 0, 0, 0 )
+
+[node name="AmmoCrate" parent="." instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.93701, 0.389243, 0.955414 )
+
+[node name="Medpack" parent="." instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.30007, 0.212314, 2.12314 )
 
 [node name="Cube" parent="." instance=ExtResource( 2 )]
 transform = Transform( -25.8, 8.74228e-08, 0, -2.25551e-06, -1, 0, 0, 0, 45.684, 18.7544, 2.96476, 0 )
@@ -133,9 +141,6 @@ transform = Transform( -2.62268e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.62268e-08, 2
 
 [node name="ShooterEnemyZombie14" parent="." instance=ExtResource( 3 )]
 transform = Transform( 7.86805e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, 7.86805e-08, 14.1907, 0.353857, -9.87177 )
-
-[node name="EnemyZombie2" parent="." instance=ExtResource( 14 )]
-transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 6.01557, 0, -1.81841 )
 
 [node name="LTurn2" parent="." instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7466, 0, 3.89243 )

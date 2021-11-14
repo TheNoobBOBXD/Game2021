@@ -30,7 +30,7 @@ visible = false
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -4, -0.239246, -2.45 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -4, 0.510754, -2.45 )
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -4, 0.910754, -2.45 )
 
 [node name="Button" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.88432, 0, 0, 0, 0.680669, 0, 0, 0, 0.292023, -7.08934, 1.19623, -3.80013 )

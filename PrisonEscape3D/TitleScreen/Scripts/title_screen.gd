@@ -7,7 +7,10 @@ func _ready():
 
 func _on_NewGameButton_pressed():
 	get_tree().change_scene("res://Scenes/Level0.tscn")
-	
+
+func _on_ControlButton_pressed():
+	get_tree().change_scene("res://TitleScreen/Game/Control.tscn")
+
 func _on_Settings_pressed():
 	get_tree().change_scene("res://TitleScreen/Game/Settings.tscn")
 	

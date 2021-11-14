@@ -16,6 +16,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("primary_fire") and can_fire:
 		fire()
 		
+		SoundPlayer.play("res://Sounds/Sfx/LaserorShoot/Laser_001.wav")
 func fire():
 	print("fired weapon")
 	can_fire = false

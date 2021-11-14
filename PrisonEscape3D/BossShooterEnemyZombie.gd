@@ -15,6 +15,7 @@ func _ready():
 func hit_zombie():
 	health -= 1
 	if health <= 0:
+		SoundPlayer.play("res://Sounds/Sfx/Random/Randomize2.wav")
 		queue_free()
 
 
@@ -36,11 +37,14 @@ func _physics_process(delta):
 					Playerinfo.change_health(-15)
 					$RayCast.get_collider().hit()
 					print("yeet")
+					SoundPlayer.play("res://Sounds/Sfx/Hitorhurt/001.wav")
+					
+					
 					if Playerinfo.get_health() <= 0:
 						get_tree().reload_current_scene()
 						Playerinfo.change_lives(-1)
 						Playerinfo.reset()
-						
+						SoundPlayer.play("res://Sounds/Sfx/Explosion/Explosion_002.wav")
 			can_shoot = false
 			$Timer.start()
 

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Randomize7.wav-dee484390b43bbbe9508e88f2a07264b.sample"
+
+[deps]
+
+source_file="res://Sounds/Sfx/Random/Randomize7.wav"
+dest_files=[ "res://.import/Randomize7.wav-dee484390b43bbbe9508e88f2a07264b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Shoot_003.wav-53e5b59b604d3c24c3c67c28a5132500.sample"
+
+[deps]
+
+source_file="res://Sounds/Sfx/LaserorShoot/Shoot_003.wav"
+dest_files=[ "res://.import/Shoot_003.wav-53e5b59b604d3c24c3c67c28a5132500.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

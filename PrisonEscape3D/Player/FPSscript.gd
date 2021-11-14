@@ -45,10 +45,7 @@ func check_hit():
 
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_cancel") and Playerinfo.has_ammo():
-		
-		check_hit()
-		
+	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _physics_process(delta):
@@ -88,11 +85,17 @@ func _physics_process(delta):
 
 func crouch(delta):
 	print("crouch")
-	$CollisionShape.shape.height = 0.5
+	$CollisionShape.shape.height = 0.75
+	speed = 6.9
+	mouse_sensitivity = 0.15
+	jump_power = 15
 
 func uncrouch(delta):
 	print("uncrouch")
 	$CollisionShape.shape.height = 1.25
+	speed = 20
+	mouse_sensitivity = 0.2
+	jump_power = 30
 
 func hit():
 	$Head/Camera/ColorRect.show()

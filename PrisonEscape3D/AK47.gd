@@ -1,6 +1,6 @@
 extends Spatial
 
-
+var has_ammo = true
 var weapon_damage = 29
 var can_fire = true
 var fire_rate = 0.11
@@ -11,13 +11,23 @@ func _ready():
 	pass
 
 func _process(_delta):
-	if Input.is_action_pressed("primary_fire") and can_fire:
+	if Input.is_action_pressed("primary_fire") and can_fire and has_ammo:
 		$AK47Good/AnimationPlayer.play("Shoot")
 		fire()
+		SoundPlayer.play("res://Sounds/Sfx/LaserorShoot/Shoot_001.wav")
 	if Input.is_action_just_released("primary_fire"):
 		$AK47Good/AnimationPlayer.stop()
 	
+func has_ammo():
+	if Playerinfo.ammo() <=0:
+		has_ammo = false
+		can_fire = false
+	else:
+		can_fire = true
+		has_ammo = true
 		
+	
+
 func fire():
 	print("fired weapon")
 	can_fire = false

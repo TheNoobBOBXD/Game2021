@@ -22,7 +22,9 @@ func hit_zombie():
 		get_parent().add_child(a)
 		a.set_emitting(true)
 		print("splat")
+		SoundPlayer.play("res://Sounds/Sfx/Random/Randomize3.wav")
 		queue_free()
+		
 	else:
 		pass
 
@@ -44,12 +46,13 @@ func _physics_process(delta):
 				if $RayCast.get_collider().name == "Player":
 					Playerinfo.change_health(-5)
 					$RayCast.get_collider().hit()
+					SoundPlayer.play("res://Sounds/Sfx/Hitorhurt/001.wav")
 					print("yeet")
 					if Playerinfo.get_health() <= 0:
 						get_tree().reload_current_scene()
 						Playerinfo.change_lives(-1)
 						Playerinfo.reset()
-						
+						SoundPlayer.play("res://Sounds/Sfx/Explosion/Explosion_002.wav")
 			can_shoot = false
 			$Timer.start()
 

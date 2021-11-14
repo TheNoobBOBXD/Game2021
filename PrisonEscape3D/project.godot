@@ -28,6 +28,7 @@ config/icon="res://icon.png"
 
 WeaponList="*res://WeaponList.gd"
 Playerinfo="*res://playerinfo.gd"
+SoundPlayer="*res://sound_player.gd"
 
 [display]
 

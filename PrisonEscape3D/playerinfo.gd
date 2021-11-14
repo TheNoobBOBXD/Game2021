@@ -22,10 +22,6 @@ func change_health(amount):
 	health = clamp(health,0, health_max)
 
 
-	 
-	
-	
-
 func change_ammo(amount):
 	ammo += amount
 	ammo = clamp(ammo, 0, ammo_max)
@@ -35,6 +31,9 @@ func change_lives(amount):
 	lives += amount
 	lives = clamp(lives,0,lives_max)
 	if lives <= 0:
+		SoundPlayer.play("res://Sounds/Sfx/Random/Randomize9.wav")
+		print("Game Over")
+		
 		get_tree().quit()
 	
 func get_health():
@@ -54,6 +53,7 @@ func change_level():
 	if current_level <= level_count:
 		current_level += 1
 		get_tree().change_scene("res://Scenes/Level" + str(current_level) +".tscn")
+		SoundPlayer.play("res://Sounds/Sfx/Pickup/Pickup_005.wav")
 	else:
 		get_tree().quit()
 
