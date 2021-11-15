@@ -1,5 +1,6 @@
 extends Node
 
+#variables I will use in other code
 var health
 var health_max
 var ammo
@@ -9,32 +10,34 @@ var lives_max
 var current_level = 0
 var level_count = 3
 
-func _ready():
+func _ready(): #setting values for my variables
 	health = 100
 	health_max = 100
-	ammo = 100
+	ammo = 169
 	ammo_max = 5000
 	lives = 4
 	lives_max = 5
 
-func change_health(amount):
+func change_health(amount): #chagne health - shown in game by bar
 	health += amount
 	health = clamp(health,0, health_max)
 
 
-func change_ammo(amount):
+func change_ammo(amount): #chaing ammo
 	ammo += amount
 	ammo = clamp(ammo, 0, ammo_max)
 	
 
 func change_lives(amount):
-	lives += amount
-	lives = clamp(lives,0,lives_max)
-	if lives <= 0:
+	lives += amount #changing lives by amount (you die you loose one)
+	lives = clamp(lives,0,lives_max) 
+	if lives <= 0: #if 0 lives aka u lost...
 		SoundPlayer.play("res://Sounds/Sfx/Random/Randomize9.wav")
 		print("Game Over")
+		get_tree().change_scene("res://GameOver.tscn") #change to gameover scene
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) #makes mouse vissable
+		pass
 		
-		get_tree().quit()
 	
 func get_health():
 	return health
@@ -46,7 +49,7 @@ func get_lives():
 	return str(lives)
 	
 func has_ammo():
-	return ammo > 0
+	return ammo > 0 #if ammo is greater than 0
 	print(ammo)
 
 func change_level():
@@ -56,7 +59,9 @@ func change_level():
 		SoundPlayer.play("res://Sounds/Sfx/Pickup/Pickup_005.wav")
 	else:
 		#put game over here?
-		get_tree().quit()
+		get_tree().change_scene("res://YOUWIN.tscn") #change to gameover scene
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) #makes mouse vissable
+		
 
 func reset():
 	health = health_max

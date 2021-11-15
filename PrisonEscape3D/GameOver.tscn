@@ -1,0 +1,124 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://3DScenes/BigRoomDeadEnd.tscn" type="PackedScene" id=1]
+[ext_resource path="res://cooltext397810940096711.png" type="Texture" id=2]
+[ext_resource path="res://3DScenes/Cube.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemy/ShooterEnemyZombie.tscn" type="PackedScene" id=4]
+[ext_resource path="res://TitleScreen/Images/Aquire-BW0ox.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://GameOver.gd" type="Script" id=7]
+[ext_resource path="res://Enemy/BossShooterEnemyZombie.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Enemy/v2ShooterEnemyZombie.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Lightbulb.tscn" type="PackedScene" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 54
+outline_color = Color( 0.742188, 0.605927, 0.605927, 1 )
+font_data = ExtResource( 5 )
+
+[node name="GameOver" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="."]
+margin_top = 380.0
+margin_right = 1200.0
+margin_bottom = 528.0
+rect_min_size = Vector2( 360, 60 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Quit"]
+anchor_left = 0.387
+anchor_top = 2.283
+anchor_right = 0.5
+anchor_bottom = 3.09
+margin_left = 49.6
+margin_top = -286.884
+margin_right = 50.0
+margin_bottom = -287.304
+custom_colors/font_color_shadow = Color( 1, 0.592157, 0.45098, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 5
+custom_fonts/font = SubResource( 1 )
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.691268, -3 )
+
+[node name="BigRoomDeadEnd" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0962427, -6.03811 )
+
+[node name="Cube" parent="." instance=ExtResource( 3 )]
+transform = Transform( 8.8567, 0, 0, 0, 1, 0, 0, 0, 43.1875, 0, 2.07851, 0 )
+
+[node name="ShooterEnemyZombie" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.973428, 0, -0.228996, 0, 1, 0, 0.228996, 0, -0.973428, -1.05073, -1, -5.99832 )
+
+[node name="v2BossShooterEnemyZombie" parent="." instance=ExtResource( 9 )]
+transform = Transform( -0.866025, 0, 0.5, 0, 0.9, 0, -0.5, 0, -0.866025, 1.5, -1, -5.8 )
+
+[node name="BossShooterEnemyZombie" parent="." instance=ExtResource( 8 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 0.9, 0, 8.74228e-08, 0, -1, 0, -1, -7 )
+
+[node name="ShooterEnemyZombie2" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.973428, 0, -0.228996, 0, 1, 0, 0.228996, 0, -0.973428, -1.05073, -0.1, -6.99832 )
+
+[node name="v2BossShooterEnemyZombie2" parent="." instance=ExtResource( 9 )]
+transform = Transform( -0.866025, 0, 0.5, 0, 0.9, 0, -0.5, 0, -0.866025, 1.5, -0.1, -6.8 )
+
+[node name="BossShooterEnemyZombie2" parent="." instance=ExtResource( 8 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 0.9, 0, 8.74228e-08, 0, -1, 0, -0.1, -8 )
+
+[node name="ShooterEnemyZombie3" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.526392, 0, -0.850242, 0, 1, 0, 0.850242, 0, -0.526392, -4.39315, -0.1, -6.21415 )
+
+[node name="v2BossShooterEnemyZombie3" parent="." instance=ExtResource( 9 )]
+transform = Transform( -0.965926, 0, -0.258819, 0, 0.9, 0, 0.258819, 0, -0.965926, -2.44928, -0.1, -7.87755 )
+
+[node name="BossShooterEnemyZombie3" parent="." instance=ExtResource( 8 )]
+transform = Transform( -0.707107, 0, -0.707107, 0, 0.9, 0, 0.707107, 0, -0.707107, -4.35847, -0.1, -7.66542 )
+
+[node name="ShooterEnemyZombie4" parent="." instance=ExtResource( 4 )]
+transform = Transform( -0.957511, 0, 0.288397, 0, 1, 0, -0.288397, 0, -0.957511, 2.52386, -0.1, -7.76941 )
+
+[node name="v2BossShooterEnemyZombie4" parent="." instance=ExtResource( 9 )]
+transform = Transform( -0.5, 0, 0.866025, 0, 0.9, 0, -0.866025, 0, -0.5, 4.6337, -0.1, -6.32229 )
+
+[node name="BossShooterEnemyZombie4" parent="." instance=ExtResource( 8 )]
+transform = Transform( -0.866025, 0, 0.5, 0, 0.9, 0, -0.5, 0, -0.866025, 3.93466, -0.1, -8.11153 )
+
+[node name="Lightbulb" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.229308, 0.0465383, 1.6234e-10, 0, 1.49012e-08, -0.0946297, -0.0200619, 0.531935, 1.85556e-09, -0.35326, 1.29264, -1.9219 )
+
+[node name="Lightbulb2" parent="." instance=ExtResource( 10 )]
+transform = Transform( -0.22651, 0.0880312, -0.006339, 0.00194201, 0.223857, 0.0859085, 0.0409156, 0.476717, -0.0391704, 0.04674, 1.29264, -1.9219 )
+
+[node name="SpotLight" parent="Lightbulb2" index="0"]
+transform = Transform( 4.34435, 0, 9.53674e-07, 2.98023e-08, -4.76837e-07, 1.87278, 5.96046e-08, -10.5675, -2.14577e-06, -0.321029, 0.296734, -0.779938 )
+light_color = Color( 1, 0.027451, 0.027451, 1 )
+light_energy = 3.172
+light_specular = 0.44
+spot_angle = 60.7615
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 335.0
+margin_right = 831.0
+margin_bottom = 207.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
+
+[editable path="Lightbulb2"]

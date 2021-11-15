@@ -25,3 +25,4 @@ func _on_Quit_pressed(): #literally quites the game if it is pressed.
 #func _on_FadeIn_fade_finished():
 #	$FadeIn/AnimationPlayer.stop
 #	pass # Replace with function body.
+#didn't want it and didn't work

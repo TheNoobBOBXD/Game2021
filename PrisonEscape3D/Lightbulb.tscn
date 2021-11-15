@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CapsuleMesh" id=1]
+
+[node name="Lightbulb" type="MeshInstance"]
+transform = Transform( 0.230184, 0, 0, 0, 0.533967, 0, 0, 0, 0.0946297, -1.25326, 2.89264, 0.878099 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1.53728, 0, 0, 0, -1.63454e-07, 0.662695, 0, -3.73939, -9.2232e-07, -0.321029, 0.296734, -0.779938 )
+light_color = Color( 0.027451, 0.0431373, 1, 1 )
+light_energy = 4.2
+shadow_enabled = true
+spot_range = 22.2

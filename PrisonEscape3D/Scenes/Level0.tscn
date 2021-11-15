@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://3DScenes/Cube.tscn" type="PackedScene" id=2]
@@ -22,8 +22,6 @@
 [ext_resource path="res://MYcreations/Medpack.tscn" type="PackedScene" id=21]
 [ext_resource path="res://MYcreations/AmmoCrate.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Enemy/v2ShooterEnemyZombie.tscn" type="PackedScene" id=23]
-
-[sub_resource type="CapsuleMesh" id=1]
 
 [node name="World" type="Spatial"]
 transform = Transform( 2.826, 0, 0, 0, 2.826, 0, 0, 0, 2.826, 0, 0, 0 )
@@ -74,15 +72,6 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.38
 transform = Transform( 0.786349, 0, 0, 0, 0.786349, 0, 0, 0, 0.786349, 0, 0.255563, 0 )
 
 [node name="UserInterface" parent="." instance=ExtResource( 10 )]
-
-[node name="Lightbulb" type="MeshInstance" parent="."]
-transform = Transform( 0.230184, 0, 0, 0, 0.533967, 0, 0, 0, 0.0946297, -1.25326, 2.89264, 0.878099 )
-mesh = SubResource( 1 )
-material/0 = null
-
-[node name="SpotLight" type="SpotLight" parent="Lightbulb"]
-transform = Transform( 1.53728, 0, 0, 0, -1.63454e-07, 0.662695, 0, -3.73939, -9.2232e-07, -0.321029, 0.296734, -0.779938 )
-spot_range = 22.2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 1 )

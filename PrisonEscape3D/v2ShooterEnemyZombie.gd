@@ -70,7 +70,7 @@ func _on_Area_body_entered(body):
 func _on_Area_body_exited(body):
 	if body.name == "Player":
 		$RayCast.set_enabled(false)
-		print("boho lost player")
+		print("boho lost player") #no longer can follow or shoot at the player
 		follow_player = false
 		can_shoot = false
 	pass
