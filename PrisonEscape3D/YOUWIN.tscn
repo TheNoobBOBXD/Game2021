@@ -86,4 +86,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Spatial" type="Spatial" parent="."]
+
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
